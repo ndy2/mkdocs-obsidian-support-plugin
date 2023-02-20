@@ -2,7 +2,7 @@ import re
 
 from mkdocs.plugins import BasePlugin
 
-OBSIDIAN_ADMONITION_REGEX = ">\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n>.*)*)"
+OBSIDIAN_ADMONITION_REGEX = "> ?\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n>.*)*)"
 
 
 def apply_admonition(markdown):

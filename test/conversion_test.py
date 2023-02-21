@@ -5,6 +5,7 @@ from parameterized import parameterized
 from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition import AdmonitionConvert
 from obsidian_support.conversion.image_link import ImageLinkConvert
+from obsidian_support.markdown_code_extract import get_code_indices
 from obsidian_support.markdown_convert import markdown_convert
 
 """
@@ -28,9 +29,10 @@ class ConversionTest(TestCase):
         dest = open(f"{conversion_name}/expected/{test}.md", 'r')
         given = src.read()
         expected = dest.read()
+        code_indices = get_code_indices(given)
 
         ## when
-        actual = markdown_convert(given, conversion)
+        actual = markdown_convert(given, conversion, code_indices)
 
         ## then
         self.assertEqual(expected, actual)

@@ -1,12 +1,12 @@
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
-OBSIDIAN_CALL_OUT_REGEX = "\n ?> ?\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n ?>.*)*)"
-OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'title', 'lines']
-
 """
 a strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
 to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 """
+
+OBSIDIAN_CALL_OUT_REGEX = "\n ?> ?\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n ?>.*)*)"
+OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'title', 'lines']
 
 
 class AdmonitionConvert(AbstractConversion):
@@ -25,5 +25,5 @@ def create_admonition(ad_type: str, title: str, lines: str) -> str:
     else:
         title = ' \"' + title[1:] + '\"'
 
-    admonition = "\n!!! " + ad_type + title + "\n" + lines + "\n"
+    admonition = "\n!!! " + ad_type + title + "\n" + lines
     return admonition

@@ -19,7 +19,7 @@ class ConversionTest(TestCase):
     def test_callout_to_admonition(self, test):
         self.assert_template("admonition", test, AdmonitionConvert())
 
-    @parameterized.expand(['basic'])
+    @parameterized.expand(['basic', 'me'])
     def test_wikilink_image_to_md_link_image(self, test):
         self.assert_template("image_link", test, ImageLinkConvert())
 

@@ -16,8 +16,5 @@ pip install mkdocs-obsidian-support-plugin
 Activate the plugin in mkdocs.yml 
 ```yaml
 plugins:
-  - search
   - obsidian-support
 ```
-
-

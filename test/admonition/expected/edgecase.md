@@ -9,4 +9,3 @@
 
 3. callout with no lines and with title
 !!! info "title"
-

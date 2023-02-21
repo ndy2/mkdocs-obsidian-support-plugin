@@ -15,7 +15,7 @@ def markdown_convert(markdown: str, conversion: AbstractConversion,
     for obsidian_syntax in re.finditer(conversion.obsidian_regex, markdown):
         ## found range of markdown where the obsidian_regex matches
         start = obsidian_syntax.start()
-        end = obsidian_syntax.end()
+        end = obsidian_syntax.end() - 1
 
         ## continue if match is in excluded range
         if __is_excluded(start, end, exclude_indices_pairs):
@@ -23,7 +23,7 @@ def markdown_convert(markdown: str, conversion: AbstractConversion,
 
         syntax_groups = list(map(lambda group: obsidian_syntax.group(group), conversion.obsidian_regex_groups))
 
-        mkdocs_syntax = conversion.convert(syntax_groups) + "\n"
+        mkdocs_syntax = conversion.convert(syntax_groups)
         converted_markdown += markdown[index:start]
         converted_markdown += mkdocs_syntax
         index = end + 1

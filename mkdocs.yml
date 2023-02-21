@@ -13,6 +13,8 @@ theme:
     font:
       text: Roboto
       code: Roboto Mono
+    features:
+       - content.action.view
 
 # Extensions
 markdown_extensions:

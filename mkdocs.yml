@@ -1,0 +1,29 @@
+# Project information
+site_name: mkdocs-obsidian-support-plugin
+site_url: https://pypi.org/project/mkdocs-obsidian-support-plugin/
+site_description: >-
+  A MkDocs plugin that supports obsidian to mkdocs convert
+
+#Repository
+repo_name: ndy2/mkdocs-obsidian-support-plugin
+repo_url: https://github.com/ndy2/mkdocs-obsidian-support-plugin
+
+theme:
+    name: 'material'
+    font:
+      text: Roboto
+      code: Roboto Mono
+
+# Extensions
+markdown_extensions:
+  - md_in_html
+  - attr_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+# Page tree
+nav:
+  - index.md

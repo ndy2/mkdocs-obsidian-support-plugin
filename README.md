@@ -21,6 +21,8 @@ plugins:
 -  `obsidian wikilink image` -> `mkdocs-material mdlink image` & `image with md_in_html`
 
 
-> [!tip]
+## github-pages
+
+> [!info]
 > 
 > See https://ndy2.github.io/mkdocs-obsidian-support-plugin/ for more details

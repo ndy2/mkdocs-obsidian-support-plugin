@@ -33,6 +33,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+  # highligh
+  - pymdownx.critic
+
   # general
   - toc:
       permalink: true

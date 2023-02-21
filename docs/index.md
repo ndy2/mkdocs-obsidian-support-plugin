@@ -18,3 +18,8 @@ Activate the plugin in mkdocs.yml
 plugins:
   - obsidian-support
 ```
+
+### Features
+
+- [obsidian callout to mkdocs-material admonition](features/admonition/index.md)
+- [convert wikilink image to mkdocs-material readable image document](features/image-link/index.md)

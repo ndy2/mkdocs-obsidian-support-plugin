@@ -10,12 +10,13 @@ repo_name: ndy2/mkdocs-obsidian-support-plugin
 repo_url: https://github.com/ndy2/mkdocs-obsidian-support-plugin
 
 theme:
-    name: 'material'
-    font:
-      text: Roboto
-      code: Roboto Mono
-    features:
-       - content.action.view
+  name: 'material'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - content.code.copy
+    - content.action.view
 
 # Extensions
 markdown_extensions:
@@ -44,3 +45,11 @@ markdown_extensions:
 
 plugins:
   - obsidian-support
+
+nav:
+  - index.md
+  - Features:
+      - Admonition:
+          - features/admonition/index.md
+          - features/admonition/demo.md
+      - Image Link: features/image-link/index.md

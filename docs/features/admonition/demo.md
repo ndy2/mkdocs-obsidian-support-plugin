@@ -37,31 +37,42 @@
 > 	println("hello world")
 > ```
 
-`7. note with content tab` - should be imporved
+`7. note with content tab` - might be imporved
 
->[!note] note with content tab
->=== "C"
->    ``` c
->    #include <stdio.h>
->    
->    int main(void) {
->          printf("Hello world!\n");
->         return 0;
->    }
->    ```
+ > [!note] code block with content tab and admonition
+> === "C"
 > 
->=== "Kotlin"
->     ```kotlin
+>     ``` c
+>     #include <stdio.h>
+>     
+>     in main(void) {
+>         printf("Hello world!\n")
+>         return 0;
+>     }
+>     ```
+>    
+> === "kotlin"
+> 
+>     ``` kotlin
 >     fun main(){
->     	println("Hello world!")
+>         println("Hello world!")
 >     }
 >     ```
 
 
-### 2. ⚠️ Warning
-
-1. It does not work if your markdown starts with the `callout` it self.
-	 - add dummy new link at the beginning of your markdown will fix it.
-
- 2. Unlike actual obsidian callout, It allows only zero or one space before and after `>` character
- 3. `type` must be written in lowercase : `info` , ~~`Info`~~
+ > [!example]
+> === "Unordered List"
+> 
+>     ``` markdown
+>     * Sed sagittis eleifend rutrum
+>     * Donec vitae suscipic est
+>     * Nulla tempor lobortis orci
+>     ```
+>    
+> === "Ordered List"
+> 
+>     ``` markdown
+>     1. Sed sagittis eleifend rutrum
+>     2. Donec vitae suscipic est
+>     3. Nullatempor loboritis orci
+>     ```

@@ -75,3 +75,8 @@ Implementation code at [here](https://github.com/ndy2/mkdocs-obsidian-support-pl
 As you might noticed that actual obsidian callout has more flexible rendering condition than above regex.  It allows some more spaces and so on.
 
 For implementation convenience, above regex allows zero or one space before and after `>`'character. And it begins with a new line character `\n`. So, in case of your markdown begins with call out, it does not work as expected.
+
+> [!info] haha
+
+> [!info]
+

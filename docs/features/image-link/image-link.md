@@ -15,10 +15,29 @@ mdlink   :  [images/hello.png](images/hello.png)
 
 ## Features
 
-| type                        | wikilink                 | converted link                          | supported |
-| --------------------------- | ------------------------ | --------------------------------------- | ------- |
-| basic                       | `![[hello.png]]`        | `![hello.png](hello.png)`               | o       |
-| path                   | `![[image/hello.png]]`   | ``![images/hello.png](images/hello.png)`` | o       |
-| custom size            | `![[hello.png|200x300]]` |                                         | x       |
-| caption                | `![[hello.png|caption]]` |                                      bye   | x       |
-| custom size & caption | `![[images/hello.png|caption|200]]`                        |   hi                                      |  x       |
+| type           | wikilink                            | converted link                          | implemented |
+| -------------- | ----------------------------------- | --------------------------------------- | --------- |
+| basic          | `![[hello.png]]`                    | `![hello.png](hello.png)`               | o         |
+| path           | `![[image/hello.png]]`              | `![images/hello.png](images/hello.png)` | o         |
+| size           | `![[hello.png|200x300]]`            | will be html                            | x         |
+| caption        | `![[hello.png|caption]]`            | will be html                            | x         |
+| size & caption | `![[im/hello.png|my-caption|200]]` | will be html                            | x         |
+
+### Demo
+
+> [!tip]
+> Compare this page with it's original markdown. See the top right link
+
+`![[hello.png]]`
+
+
+![[hello.png]]
+
+`![[hello.png|200x200]]`
+
+![[hello.png|200x200]]
+
+
+`![[hello.png|hello-caption|200x200]]`
+
+![[hello.png|hello-caption|200x200]]

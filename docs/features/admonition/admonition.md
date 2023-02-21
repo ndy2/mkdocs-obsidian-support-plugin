@@ -2,7 +2,7 @@
 ## Admonition
 
 > [!note]  feature - admonition
-> convert `obsidian callout' to `mkdocs-material admonition`
+> convert `obsidian callout` to `mkdocs-material admonition`
 
 ###  [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
 

@@ -1,4 +1,4 @@
-### Obsidian Callout to Mkdocs-material Admonition Conversion Examples & Tests
+### Obsidian Callout to Mkdocs-material Admonition Conversion Complex Tests
 
 1. basic
 
@@ -9,7 +9,6 @@
 
 > [!note]
 > github for this project - [link](https://github.com/ndy2/mkdocs-obsidian-support-plugin)
-
 
 3. with title 
 
@@ -50,3 +49,10 @@
 > 	println("Hello world!")
 > }
 > ```
+
+7. within codeblock
+
+```
+> [!note] this should not be converted
+> because it is in code block
+```

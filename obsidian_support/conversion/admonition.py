@@ -1,6 +1,6 @@
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
-OBSIDIAN_CALL_OUT_REGEX = "> ?\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n>.*)*)"
+OBSIDIAN_CALL_OUT_REGEX = "\n ?> ?\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n ?>.*)*)"
 OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'title', 'lines']
 
 """
@@ -25,5 +25,5 @@ def create_admonition(ad_type: str, title: str, lines: str) -> str:
     else:
         title = ' \"' + title[1:] + '\"'
 
-    admonition = "!!! " + ad_type + title + "\n" + lines
+    admonition = "\n!!! " + ad_type + title + "\n" + lines + "\n"
     return admonition

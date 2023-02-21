@@ -13,9 +13,8 @@ unit tests for `obsidian syntax` to `mkdocs-material syntax` conversion
 
 
 class ConversionTest(TestCase):
-    tests = ['basic']
 
-    @parameterized.expand(['basic', 'all'])
+    @parameterized.expand(['indent', 'complex', 'edgecase'])
     def test_callout_to_admonition(self, test):
         self.assert_template("admonition", test, AdmonitionConvert())
 

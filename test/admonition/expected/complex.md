@@ -1,10 +1,11 @@
-### Obsidian Callout to Mkdocs-material Admonition Conversion Examples & Tests
+### Obsidian Callout to Mkdocs-material Admonition Conversion Complex Tests
 
 1. basic
 
 !!! note
 
     basic admonition conversion test
+
 2. with external links
 
 !!! note
@@ -16,11 +17,13 @@
 !!! note "title"
 
     haha
+
 4. with image (in Markdown link)
 
 !!! note
 
     [img.png](../../images/img.png)
+
 5. with code block
 
 !!! note "note with code block"
@@ -29,6 +32,7 @@
     fun main() {
     	println("hello world")
     ```
+
 6. note with content tab
 
 !!! note "note with content tab"
@@ -51,3 +55,10 @@
     	println("Hello world!")
     }
     ```
+
+7. within codeblock
+
+```
+> [!note] this should not be converted
+> because it is in code block
+```

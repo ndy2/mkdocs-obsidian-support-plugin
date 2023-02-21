@@ -39,6 +39,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
 
+  # footnotes
+  - footnotes
+
   # general
   - toc:
       permalink: true

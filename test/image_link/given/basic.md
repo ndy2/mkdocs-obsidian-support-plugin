@@ -11,4 +11,3 @@
 
 4. in code - should not converted
 `![[hello.png]]`
-

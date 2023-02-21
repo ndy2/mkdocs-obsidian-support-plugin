@@ -34,6 +34,6 @@ def markdown_convert(markdown: str, conversion: AbstractConversion,
 
 def __is_excluded(start: int, end: int, exclude_indices_pairs: EXCLUDE_RANGES) -> bool:
     for exclude_indices_pair in exclude_indices_pairs:
-        if exclude_indices_pair[0] < start and end < exclude_indices_pair[1]:
+        if exclude_indices_pair[0] <= start and end <= exclude_indices_pair[1]:
             return True
     return False

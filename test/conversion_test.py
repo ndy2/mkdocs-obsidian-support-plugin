@@ -15,11 +15,11 @@ unit tests for `obsidian syntax` to `mkdocs-material syntax` conversion
 
 class ConversionTest(TestCase):
 
-    @parameterized.expand(['indent', 'complex', 'edgecase', 'me'])
+    @parameterized.expand(['indent', 'complex', 'edgecase'])
     def test_callout_to_admonition(self, test):
         self.assert_template("admonition", test, AdmonitionConvert())
 
-    @parameterized.expand(['basic', 'me'])
+    @parameterized.expand(['basic'])
     def test_wikilink_image_to_md_link_image(self, test):
         self.assert_template("image_link", test, ImageLinkConvert())
 

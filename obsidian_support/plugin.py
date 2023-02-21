@@ -16,12 +16,9 @@ class ObsidianSupportPlugin(BasePlugin):
 
     def on_page_markdown(self, markdown, page, config, files):
         ## apply conversions
-        markdown = markdown_convert(markdown, AdmonitionConvert(), get_excluded_indices(markdown))
-        markdown = markdown_convert(markdown, ImageLinkConvert(), get_excluded_indices(markdown))
-        markdown = markdown_convert(markdown, TextHighlightingConvert(), get_excluded_indices(markdown))
+        markdown = markdown_convert(markdown, AdmonitionConvert())
+        markdown = markdown_convert(markdown, ImageLinkConvert())
+        markdown = markdown_convert(markdown, TextHighlightingConvert())
 
         return markdown
 
-
-def get_excluded_indices(markdown: str) -> EXCLUDE_RANGES:
-    return get_code_indices(markdown)

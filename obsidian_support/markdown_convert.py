@@ -1,7 +1,7 @@
 import re
 
 from obsidian_support.abstract_conversion import AbstractConversion
-from obsidian_support.markdown_code_extract import EXCLUDE_RANGES
+from obsidian_support.markdown_code_extract import EXCLUDE_RANGES, get_code_indices
 
 """
 A template method that applies conversion for every regex matches 
@@ -17,7 +17,7 @@ def markdown_convert(markdown: str, conversion: AbstractConversion) -> str:
         end = obsidian_syntax.end() - 1
 
         ## continue if match is in excluded range
-        if __is_excluded(start, end, exclude_indices_pairs):
+        if __is_excluded(start, end, get_excluded_indices(markdown)):
             continue
 
         syntax_groups = list(map(lambda group: obsidian_syntax.group(group), conversion.obsidian_regex_groups))
@@ -29,6 +29,10 @@ def markdown_convert(markdown: str, conversion: AbstractConversion) -> str:
 
     converted_markdown += markdown[index:len(markdown)]
     return converted_markdown
+
+
+def get_excluded_indices(markdown: str) -> EXCLUDE_RANGES:
+    return get_code_indices(markdown)
 
 
 def __is_excluded(start: int, end: int, exclude_indices_pairs: EXCLUDE_RANGES) -> bool:

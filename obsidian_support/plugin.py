@@ -1,7 +1,6 @@
 from mkdocs.plugins import BasePlugin
 
 from obsidian_support.conversion.admonition import AdmonitionConvert
-from obsidian_support.conversion.highlight import TextHighlightingConvert
 from obsidian_support.conversion.image_link import ImageLinkConvert
 from obsidian_support.markdown_convert import markdown_convert
 
@@ -17,7 +16,6 @@ class ObsidianSupportPlugin(BasePlugin):
         ## apply conversions
         markdown = markdown_convert(markdown, AdmonitionConvert())
         markdown = markdown_convert(markdown, ImageLinkConvert())
-        markdown = markdown_convert(markdown, TextHighlightingConvert())
 
         return markdown
 

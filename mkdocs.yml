@@ -33,8 +33,10 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
-  # highligh
-  - pymdownx.critic
+  # Caret, Mark & Tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 
   # general
   - toc:

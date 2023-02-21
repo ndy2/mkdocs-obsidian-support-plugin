@@ -60,7 +60,8 @@
 
 ### 2. ⚠️ Warning
 
- 1. It does not work if your markdown starts with the `callout` it self.
+1. It does not work if your markdown starts with the `callout` it self.
 	 - add dummy new link at the beginning of your markdown will fix it.
 
-2 Unlike actual obsidian callout, It allows only zero or one space before and after `>` character
+ 2. Unlike actual obsidian callout, It allows only zero or one space before and after `>` character
+ 3. `type` must be written in lowercase : `info` , ~~`Info`~~

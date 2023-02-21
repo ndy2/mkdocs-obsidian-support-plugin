@@ -1,5 +1,3 @@
-import re
-
 from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.markdown_code_extract import EXCLUDE_RANGES, get_code_indices
 

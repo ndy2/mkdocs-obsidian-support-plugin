@@ -26,4 +26,8 @@ mdlink   :  [images/hello.png](images/hello.png)
 
 `| hi`
 
-`![[heelo|hi]]``
+`![[heelo|hi]]`
+
+`![[hello.png]]`
+
+![[hello.png]]

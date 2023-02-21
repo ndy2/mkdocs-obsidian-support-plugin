@@ -1,72 +1,33 @@
-### Examples
+## Image-Link
 
-> [!tip]
-> Compare this page with it's original markdown. See the top right link
-
-
-`1. basic`
-
-> [!note]
-> basic admonition conversion test
-
-`2. with external links`
-
-> [!note]
-> github for this project - [link](https://github.com/ndy2/mkdocs-obsidian-support-plugin)
-
-`3. with title `
-
-> [!note] title
-> haha
-
-`4. with image (in Markdown link)`
-
-> [!note]
-> ![images/img.png](images/img.png)
-
-`5. with image (in Wiki link)`
-
-> [!note]
-> ![[images/img.png]]
-
-`6. with code block`
-
-> [!note] note with code block
-> ```kotlin
-> fun main() {
-> 	println("hello world")
-> ```
-
-`7. note with content tab` - should be imporved
-
->[!note] note with content tab
->=== "C"
->    ``` c
->    #include <stdio.h>
->    
->    int main(void) {
->          printf("Hello world!\n");
->         return 0;
->    }
->    ```
-> 
->=== "Kotlin"
->     ```kotlin
->     fun main(){
->     	println("Hello world!")
->     }
->     ```
+> [!note]  feature - image-link
+> convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
 
 
-### 2. ⚠️ Warning
+bsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links) with [embbe an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) which is also known as `internal link`. However markdown and mkdocs-material does not support `wikilink`. It uses traditional [`markdown links`](https://squidfunk.github.io/mkdocs-material/reference/images/).
 
-1. within codeblock - `should be fixed`
-```
-> [!note] this should not be converted
-> because it is in code block
+```text
+wikilink :  ![[images/hello.png]] 
+mdlink   :  [images/hello.png](images/hello.png)
 ```
 
- 2. It does not work if your markdown starts with the call out it self.
-	 - add dummy new link at the beginning of your markdown will fix it.
 
-3. Unlike actual obsidian callout, It allows only zero or one space before and after `>`'character
+
+## Features
+
+| type                        | wikilink                 | converted link                          | supported |
+| --------------------------- | ------------------------ | --------------------------------------- | ------- |
+| basic                       | `![[hello.png]]`        | `![hello.png](hello.png)`               | o       |
+| path                   | `![[image/hello.png]]`   | ``![images/hello.png](images/hello.png)`` | o       |
+| custom size            | `![[hello.png|200x300]]` |                                         | x       |
+| caption                | `![[hello.png|caption]]` |                                      bye   | x       |
+| custom size & caption | `![[images/hello.png|caption|200]]`                        |   hi                                      |  x       |
+
+
+`| hi`
+
+`![[heelo|hi]]`
+
+`![[hello.png]]`
+
+![[hello.png]]

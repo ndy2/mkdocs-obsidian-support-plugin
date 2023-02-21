@@ -4,7 +4,6 @@
 > [!tip]
 > Compare this page with it's original markdown. See the top right link
 
-
 `1. basic`
 
 > [!note]
@@ -61,13 +60,7 @@
 
 ### 2. ⚠️ Warning
 
-1. within codeblock - `should be fixed`
-```
-> [!note] this should not be converted
-> because it is in code block
-```
-
- 2. It does not work if your markdown starts with the call out it self.
+ 1. It does not work if your markdown starts with the `callout` it self.
 	 - add dummy new link at the beginning of your markdown will fix it.
 
-3. Unlike actual obsidian callout, It allows only zero or one space before and after `>`'character
+2 Unlike actual obsidian callout, It allows only zero or one space before and after `>` character

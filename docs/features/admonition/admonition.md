@@ -19,7 +19,7 @@
 
 === "obsidian rendered"
 
-    ![[images/1.png]]
+     ![[images/1.png]]
 
 
 ### [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions)
@@ -35,11 +35,11 @@
 
 === "mkdocs-material rendered"
 
-!!!note "haha"
-
-    I am obsidian callout!
+    !!!note "haha"
     
-    I became mkdocs admonition!
+        I am obsidian callout!
+        
+        I became mkdocs admonition!
 
 
 

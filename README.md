@@ -24,7 +24,6 @@ plugins:
 ---
 
 ### 1. `obsidian callout` -> `mkdocs admonition`
----
 
 in obsidian,
 ```text
@@ -67,3 +66,59 @@ finally it rendered as below in mkdocs-material
 - bug
 - example
 - quote
+
+#### 2. `obsidian wikilink image` -> `mkdocs mdlink image`
+
+Obsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links) (and this [link](https://help.obsidian.md/Linking+notes+and+files/Embedding+files)) which is also known as `internal link`.
+However mkdocs does not support `wikilink`. It uses traditional [`markdown links`](https://squidfunk.github.io/mkdocs-material/reference/images/).
+
+```
+wikilink :  ![[images/hello.png]]
+mdlink   :  [images/hello.png](images/hello.png)
+```
+
+I think `wikilink` is more compact and easy to read. This feature convert wikilink to mdlink.
+To use all features in image link conversion, you need markdown_extention [md_in_html](https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#markdown-in-html) and obsidian plugin [obsidian-image-captions](https://github.com/alangrainger/obsidian-image-captions) for more flexible displaying image (resizing, caption, alignment ...).
+
+But, for now, it only support only for image (not internal documentation link) in the most simple form as above example. 
+
+It does not support .. 
+
+- change th image size 
+
+wikilink (obsidian native)
+```
+![[images/hello.png|300x200]]
+```
+
+mdlink (with markdown extention - `attr_list`)
+```
+[images/hello.png](images/hello.png) {: style="width:300;height:200px"} // with markdown_plugin - `attr_list`
+```
+
+html (requires markdown_extention md_in_html) 
+```
+<figure markdown>
+  ![images/hello.png](images/hello.png){ width="300", height="200" }
+</figure>
+```
+
+- image caption (requires plugin [obsidian-image-captions](https://github.com/alangrainger/obsidian-image-captions) for obsidian)
+
+wikilink
+```
+![[images/hello.png|caption]]
+```
+
+mdlink 
+```
+[caption][images/hello.png]
+```
+
+- html (requires markdown_extention md_in_html) 
+```
+<figure markdown>
+  ![caption](images/hello.png){ width="300", height="200" }
+  <figcaption>caption</figcaption>
+</figure>
+```

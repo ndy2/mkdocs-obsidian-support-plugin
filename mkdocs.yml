@@ -16,14 +16,23 @@ theme:
 
 # Extensions
 markdown_extensions:
+  # admonition
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  # image link
   - md_in_html
   - attr_list
+
+  # content tab
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # general
   - toc:
       permalink: true
 
 plugins:
-  - search
-
-# Page tree
-nav:
-  - index.md
+  - obsidian-support

@@ -12,7 +12,7 @@ def markdown_convert(markdown: str, conversion: AbstractConversion,
                      exclude_indices_pairs: EXCLUDE_RANGES) -> str:
     converted_markdown = ""
     index = 0
-    for obsidian_syntax in re.finditer(conversion.obsidian_regex, markdown):
+    for obsidian_syntax in conversion.obsidian_regex_pattern.finditer(markdown):
         ## found range of markdown where the obsidian_regex matches
         start = obsidian_syntax.start()
         end = obsidian_syntax.end() - 1

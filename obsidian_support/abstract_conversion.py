@@ -1,3 +1,4 @@
+import re
 from abc import *
 
 from typing import List
@@ -19,7 +20,7 @@ Every conversion should extends this class
 class AbstractConversion(metaclass=ABCMeta):
 
     def __init__(self, regex, regex_groups):
-        self.obsidian_regex = regex
+        self.obsidian_regex_pattern = re.compile(regex)
         self.obsidian_regex_groups = regex_groups
 
     @abstractmethod

@@ -1,1 +1,4 @@
-mkdocs==1.0.3
+mkdocs~=1.4.2
+
+parameterized~=0.8.1
+setuptools~=66.1.1

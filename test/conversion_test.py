@@ -4,6 +4,7 @@ from parameterized import parameterized
 
 from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition import AdmonitionConvert
+from obsidian_support.conversion.highlight import TextHighlightingConvert
 from obsidian_support.conversion.image_link import ImageLinkConvert
 from obsidian_support.markdown_convert import markdown_convert
 
@@ -21,6 +22,10 @@ class ConversionTest(TestCase):
     @parameterized.expand(['basic'])
     def test_wikilink_image_to_md_link_image(self, test):
         self.assert_template("image_link", test, ImageLinkConvert())
+
+    @parameterized.expand(['basic'])
+    def test_text_highlighting_convert(self, test):
+        self.assert_template("text_highlighting", test, TextHighlightingConvert())
 
     def assert_template(self, conversion_name: str, test: str, conversion: AbstractConversion):
         ## given

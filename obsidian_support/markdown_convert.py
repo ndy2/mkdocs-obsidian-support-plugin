@@ -8,8 +8,7 @@ A template method that applies conversion for every regex matches
 """
 
 
-def markdown_convert(markdown: str, conversion: AbstractConversion,
-                     exclude_indices_pairs: EXCLUDE_RANGES) -> str:
+def markdown_convert(markdown: str, conversion: AbstractConversion) -> str:
     converted_markdown = ""
     index = 0
     for obsidian_syntax in conversion.obsidian_regex_pattern.finditer(markdown):

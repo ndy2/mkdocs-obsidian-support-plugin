@@ -16,8 +16,6 @@ title: Admonition
     > 
     > I became mkdocs admonition!
     ```
-    this is a none bug it convert call out even if it is in a codeblock.
-    will be fixed
 
 === "obsidian rendered"
 

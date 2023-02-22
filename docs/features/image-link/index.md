@@ -15,13 +15,44 @@ mdlink   :  [images/hello.png](images/hello.png)
 
 ## Features
 
-| type           | wikilink                            | converted link                          | implemented |
-| -------------- | ----------------------------------- | --------------------------------------- | --------- |
-| basic          | `![[hello.png]]`                    | `![hello.png](hello.png)`               | o         |
-| path           | `![[image/hello.png]]`              | `![images/hello.png](images/hello.png)` | o         |
-| size           | `![[hello.png|200x300]]`            | will be html                            | x         |
-| caption        | `![[hello.png|caption]]`            | will be html                            | x         |
-| size & caption | `![[im/hello.png|my-caption|200]]` | will be html                            | x         |
+| type           | wikilink                           | converted link                          |
+| -------------- | ---------------------------------- | --------------------------------------- |
+| basic          | `![[hello.png]]`                   | `![hello.png](hello.png)`               |
+| path           | `![[image/hello.png]]`             | `![images/hello.png](images/hello.png)` |
+| size           | `![[hello.png|200x300]]`           | see below                            |
+| caption        | `![[hello.png|caption]]`           | see below                            |
+| size & caption | `![[im/hello.png|my-caption|200]]` | see below                            |
+
+
+#### converted links in `md_in_html` form
+
+=== "custom size"
+
+	```html
+	<figure markdown>
+	  ![hello.png](hello.png){ width="200" height="300" }
+	  
+	</figure markdown>
+	```
+
+=== "caption"
+
+	```html
+	<figure markdown>
+	  ![hello.png](hello.png)
+	  <figcaption>my-caption</figcaption>
+	</figure markdown>
+	```
+
+=== "custom size and caption"
+
+	```html
+	<figure markdown>
+	  ![hello.png](hello.png){ width="200" height="300" }
+	  <figcaption>caption</figcaption>
+	</figure markdown>
+	```
+
 
 ### Demo
 

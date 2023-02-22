@@ -40,7 +40,7 @@ def convert_image_link(image_path: str, tags: str) -> str:
 
     return cleandoc(f"""
             <figure markdown>
-              {markdown_image_link} {size_tag}
+              {markdown_image_link}{size_tag}
               {caption_tag}
             </figure markdown>
         """)

@@ -23,3 +23,9 @@ plugins:
 
 - [obsidian callout to mkdocs-material admonition](features/admonition/index.md)
 - [convert wikilink image to mkdocs-material readable image document](features/image-link/index.md)
+
+
+### Other plugins that helps mkdocs + obsidian
+
+- https://github.com/sondregronas/mkdocs-callouts
+- https://github.com/orbikm/mkdocs-ezlinks-plugin

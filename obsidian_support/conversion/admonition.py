@@ -19,6 +19,9 @@ class AdmonitionConvert(AbstractConversion):
 
 def create_admonition(ad_type: str, title: str, lines: str) -> str:
     lines = lines.replace("\n> ", "\n    ")
+    lines = lines.replace("\n > ", "\n    ")
+    lines = lines.replace("\n>", "\n    ")
+    lines = lines.replace("\n >", "\n    ")
 
     if title is None:
         title = ""

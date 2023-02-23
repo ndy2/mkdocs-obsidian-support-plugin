@@ -3,7 +3,7 @@
 1. indent : 0,0
 !!! note
 
->basic admonition conversion test
+    basic admonition conversion test
 
 2. indent : 0,1
 !!! note
@@ -13,12 +13,12 @@
 3. indent : 1,0
 !!! note
 
- >basic admonition conversion test
+    basic admonition conversion test
 
 4. indent : 1,1
 !!! note
 
- > basic admonition conversion test
+    basic admonition conversion test
 
 5. indent : 2,0 - do not convert
   >[!note]

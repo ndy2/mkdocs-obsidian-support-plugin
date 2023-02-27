@@ -4,6 +4,7 @@ from parameterized import parameterized
 
 from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition import AdmonitionConvert
+from obsidian_support.conversion.excalidraw import ExcalidrawConvert
 from obsidian_support.conversion.image_link import ImageLinkConvert
 from obsidian_support.markdown_convert import markdown_convert
 
@@ -14,13 +15,17 @@ unit tests for `obsidian syntax` to `mkdocs-material syntax` conversion
 
 class ConversionTest(TestCase):
 
-    @parameterized.expand(['indent', 'complex', 'edgecase','me'])
+    @parameterized.expand(['indent', 'complex', 'edgecase'])
     def test_callout_to_admonition(self, test):
         self.assert_template("admonition", test, AdmonitionConvert())
 
     @parameterized.expand(['basic', 'size', 'caption', 'size_caption'])
     def test_wikilink_image_to_md_link_image(self, test):
         self.assert_template("image_link", test, ImageLinkConvert())
+
+    @parameterized.expand(['basic'])
+    def test_excalidraw_convert(self, test):
+        self.assert_template("excalidraw", test, ExcalidrawConvert())
 
     def assert_template(self, conversion_name: str, test: str, conversion: AbstractConversion):
         ## given

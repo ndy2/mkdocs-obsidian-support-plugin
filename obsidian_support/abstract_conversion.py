@@ -2,6 +2,7 @@ import re
 from abc import *
 
 from typing import List
+from mkdocs.structure.pages import Page
 
 # a list of string that implies the syntax groups in regex
 SyntaxGroup = List[str]
@@ -24,5 +25,5 @@ class AbstractConversion(metaclass=ABCMeta):
         self.obsidian_regex_groups = regex_groups
 
     @abstractmethod
-    def convert(self, syntax_groups: SyntaxGroup) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
         pass

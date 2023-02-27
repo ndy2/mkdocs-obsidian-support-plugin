@@ -3,6 +3,7 @@ import re
 from inspect import cleandoc
 
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
+from mkdocs.structure.pages import Page
 
 """
 a strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
@@ -17,7 +18,7 @@ class ImageLinkConvert(AbstractConversion):
     def __init__(self):
         super().__init__(OBSIDIAN_WIKILINK_IMAGE_REGEX, OBSIDIAN_WIKILINK_IMAGE_REGEX_GROUPS)
 
-    def convert(self, syntax_groups: SyntaxGroup) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
         return convert_image_link(*syntax_groups)
 
 

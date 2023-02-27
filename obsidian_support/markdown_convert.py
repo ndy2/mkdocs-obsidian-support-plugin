@@ -1,12 +1,13 @@
 from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.markdown_code_extract import EXCLUDE_RANGES, get_code_indices
+from mkdocs.structure.pages import Page
 
 """
-A template method that applies conversion for every regex matches 
+A template method that applies conversion for every regex matches
 """
 
 
-def markdown_convert(markdown: str, conversion: AbstractConversion) -> str:
+def markdown_convert(markdown: str, page: Page, conversion: AbstractConversion) -> str:
     converted_markdown = ""
     index = 0
     for obsidian_syntax in conversion.obsidian_regex_pattern.finditer(markdown):
@@ -20,7 +21,7 @@ def markdown_convert(markdown: str, conversion: AbstractConversion) -> str:
 
         syntax_groups = list(map(lambda group: obsidian_syntax.group(group), conversion.obsidian_regex_groups))
 
-        mkdocs_syntax = conversion.convert(syntax_groups)
+        mkdocs_syntax = conversion.convert(syntax_groups, page)
         converted_markdown += markdown[index:start]
         converted_markdown += mkdocs_syntax
         index = end + 1

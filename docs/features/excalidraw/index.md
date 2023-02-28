@@ -1,7 +1,14 @@
 ---
-title="Excalidraw"
+title: Excalidraw
+---
 ---
  
+> [!warning]
+> - This feature is not completed yet.
+> - Currently, it does not work as intented in many situations, due to the [issue related to path resolution in mkdocs-kroki-plugin](https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin/issues/29).
+> - I found that some developers work hard on this issue. As soon as it resovles, I will proceed on this feature.
+
+
 > [!note]  feature - excalidraw
 > render `excalidraw.md` in `mkdocs` as in obsidian!
 
@@ -33,21 +40,40 @@ With this feature you can embed your `excalidraw.md` file as an image
 
 #### Basic
 
-- markdown
+=== "markdown"
+    
+    `![[my-draw.excalidraw]]`
+    
+=== "rendered"
+        
+    ![[my-draw.excalidraw]]
+<br>
 
-`![[my-draw.excalidraw]]`
+=== "markdown"
+    `![[my-circles.excalidraw]]`
+=== "rendered"
+    ![[my-circles.excalidraw]]
 
-- rendered
+#### TODO - With custom size & Captions
 
-![[my-draw.excalidraw]]
-
-#### With custom size
-
-`![[my-draw.excalidraw|200]]`
-
-![[my-draw.excalidraw|200]]
+- `![[my-draw.excalidraw|200]]`
+- `![[my-draw.excalidraw|caption]]`
+- `![[my-draw.excalidraw|200|caption]]`
 
 ---
+
+### Tips
+
+I include `my-draw.excalidraw.md` as document to show `the directory structure` and `how the xxx.excalidraw.md file consists of` . In most case, you need only the rendered image, not `xxx.excalidraw.md` as document. You can use [`mkdocs-exclude-plugin` ](https://github.com/apenwarr/mkdocs-exclude) with blow config to exclude all excalidraw documents.
+
+```yaml
+plugins:
+  - obsidian-support
+  - exclude:
+        glob:
+            - "*/*.excalidraw.md"
+```
+
 
 ### shoulders of giants...
 

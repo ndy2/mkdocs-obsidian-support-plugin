@@ -1,6 +1,6 @@
 # Project information
 site_name: mkdocs-obsidian-support-plugin
-site_url: https://pypi.org/project/mkdocs-obsidian-support-plugin/
+site_url: https://ndy2.github.io
 edit_uri: blob/main/docs/
 site_description: >-
   A MkDocs plugin that supports obsidian to mkdocs convert
@@ -17,6 +17,7 @@ theme:
   features:
     - content.code.copy
     - content.action.view
+    - navigation.indexes
 
 # Extensions
 markdown_extensions:
@@ -47,12 +48,10 @@ markdown_extensions:
       permalink: true
 
 plugins:
+  - glightbox
   - obsidian-support
-
-nav:
-  - index.md
-  - Features:
-      - Admonition:
-          - features/admonition/index.md
-          - features/admonition/demo.md
-      - Image Link: features/image-link/index.md
+#  - exclude:
+#        glob:
+#            - "*/*.excalidraw.md"
+  - kroki:
+        FencePrefix: 'kroki-'

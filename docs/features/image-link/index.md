@@ -1,8 +1,9 @@
-## Image-Link
-
+---
+title: Image-Link
+---
+ 
 > [!note]  feature - image-link
 > convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
-
 
 obsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links) with [embbe an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) which is also known as `internal link`. However markdown and mkdocs-material does not support `wikilink`. It uses traditional [`markdown links`](https://squidfunk.github.io/mkdocs-material/reference/images/).
 
@@ -11,17 +12,15 @@ wikilink :  ![[images/hello.png]]
 mdlink   :  [images/hello.png](images/hello.png)
 ```
 
-
-
 ## Features
 
 | type           | wikilink                           | converted link                          |
 | -------------- | ---------------------------------- | --------------------------------------- |
 | basic          | `![[hello.png]]`                   | `![hello.png](hello.png)`               |
 | path           | `![[image/hello.png]]`             | `![images/hello.png](images/hello.png)` |
-| size           | `![[hello.png|200x300]]`           | see below                            |
-| caption        | `![[hello.png|caption]]`           | see below                            |
-| size & caption | `![[im/hello.png|my-caption|200]]` | see below                            |
+| size           | `![[hello.png|200x300]]`           | see below content tab                    |
+| caption        | `![[hello.png|caption]]`           | see below content tab                    |
+| size & caption | `![[im/hello.png|my-caption|200]]` | see below content tab                    |
 
 
 #### converted links in `md_in_html` form
@@ -59,16 +58,14 @@ mdlink   :  [images/hello.png](images/hello.png)
 > [!tip]
 > Compare this page with it's original markdown. See the top right link
 
-`![[hello.png]]`
-
+- `![[hello.png]]`
 
 ![[hello.png]]
 
-`![[hello.png|200x200]]`
+- `![[hello.png|200x200]]`
 
 ![[hello.png|200x200]]
 
-
-`![[hello.png|hello-caption|200x200]]`
+- `![[hello.png|hello-caption|200x200]]`
 
 ![[hello.png|hello-caption|200x200]]

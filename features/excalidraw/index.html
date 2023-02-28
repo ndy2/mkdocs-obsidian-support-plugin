@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="A MkDocs plugin that supports obsidian to mkdocs convert" name="description"/>
+<link href="https://ndy2.github.io/features/excalidraw/" rel="canonical"/>
+<link href="../admonition/demo/" rel="prev"/>
+<link href="my-circles.excalidraw/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<title>Excalidraw - mkdocs-obsidian-support-plugin</title>
+<link href="../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#prerequisites">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="mkdocs-obsidian-support-plugin" class="md-header__button md-logo" data-md-component="logo" href="../.." title="mkdocs-obsidian-support-plugin">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            mkdocs-obsidian-support-plugin
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Excalidraw
+            
+          </span>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ndy2/mkdocs-obsidian-support-plugin" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    ndy2/mkdocs-obsidian-support-plugin
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="mkdocs-obsidian-support-plugin" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="mkdocs-obsidian-support-plugin">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    mkdocs-obsidian-support-plugin
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ndy2/mkdocs-obsidian-support-plugin" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    ndy2/mkdocs-obsidian-support-plugin
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        About
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../admonition/">Admonition</a>
+<label for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+          Admonition
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../admonition/demo/">
+        Demo
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">Excalidraw</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Excalidraw
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="my-circles.excalidraw/">
+        My circles.excalidraw
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="my-draw.excalidraw/">
+        My draw.excalidraw
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../image-link/">Image link</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          Image link
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+    Prerequisites
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usage">
+    Usage
+  </a>
+<nav aria-label="Usage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic">
+    Basic
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#todo-with-custom-size-captions">
+    TODO - With custom size &amp; Captions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tips">
+    Tips
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shoulders-of-giants">
+    shoulders of giants...
+  </a>
+<nav aria-label="shoulders of giants..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#excalidraw-obsidian-excalidraw-plugin">
+    excalidraw, obsidian-excalidraw-plugin
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kroki">
+    kroki
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mkdocs-kroki-plugin">
+    mkdocs-kroki-plugin
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/ndy2/mkdocs-obsidian-support-plugin/raw/main/docs/features/excalidraw/index.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
+</a>
+<h1>Excalidraw</h1>
+<hr/>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>This feature is not completed yet.</li>
+<li>Currently, it does not work as intented in many situations, due to the <a href="https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin/issues/29">issue related to path resolution in mkdocs-kroki-plugin</a>.</li>
+<li>I found that some developers work hard on this issue. As soon as it resovles, I will proceed on this feature.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"> feature - excalidraw</p>
+<p>render <code>excalidraw.md</code> in <code>mkdocs</code> as in obsidian!</p>
+</div>
+<p>With this feature you can embed your <code>excalidraw.md</code> file as an image</p>
+<hr/>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="https://github.com/zsviczian/obsidian-excalidraw-plugin">obsidian-excalidraw-plugin</a></li>
+<li><a href="https://github.com/AVATEAM-IT-SYSTEMHAUS/mkdocs-kroki-plugin">mkdocs-kroki-plugin</a></li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">plugin order</p>
+<ul>
+<li>MkDocs plugin order is important for this feature</li>
+<li>By default plugin applied in order as they appear in the config.</li>
+<li>You should write <code>kroki</code> after <code>obsidian-support</code></li>
+</ul>
+<div class="highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- obsidian-support</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- kroki</span><span class="w"> </span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="nt">FencePrefix</span><span class="p">:</span><span class="w"> </span><span class="s">'kroki-'</span>
+</code></pre></div>
+</div>
+<hr/>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h3>
+<h4 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">¶</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">markdown</label><label for="__tabbed_1_2">rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>![[my-draw.excalidraw]]</code></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://kroki.io/excalidraw/svg/eNrtm1lT20gQgJ_hV2x5X5dh7iNvHAnhysEdtrZSsiRsrWVJSDLYbOW_b0vyIdkyGAKL2YqrAnh6NDOa-bqnu2fyz-pKIx1EbuPdbw23b1u-58TWbeMPKL5x48QLA5DQ7GsS9mI7r9dO0yh5t77e8tJ2r4nssLt-l9x49p1nBethM_Ec-GNt0tpa5PdaXrAeu75rJW6ynlqtdYI0IirvCIq7bpAm0Pafqysr_8C_yaBi106toOW7WdWV8qi40JWiT2GQj48IhamQlJJC7CXb0EPqOiC7svzEHRZn3xse_qQOmoPrD6Yl-83uebC5T66GXV15vn-cDvzipS273YtHo0jSOOy4556TtrMey4XjJ5IQXn9YPw57rXbgJsmkdhhZtpcOsgKMi6LiPd_9Nvzahz_XiCaIa8aM5kyJQjDIBUwgLLjUo9Ki-63QD-Os-99pU1tsNOCmZXdaMIrAGVdIYytIIiuGqR9Wuh29j-LQp6aa0GHbbddrtdNMxDQyFVHi5jNLtNEGxkNVUZx1Fu06-aL-NZ6EwBlOQtDz_eHIstL3EwQmkl7kWMWyEamU0AozGBkthL4XdCq1_dDuTNYYin78MQNT6vbTGY6owvUcKc6FUXr0Rvdy1N3auwzY-d5SoaMEUkRoCvNGK-hQjZRm5fLng0eoKWSmQcHEMGIIYy8MClsIlOF6hUF67N1lM0jxpOiD1fX8wWTic37g7bd8b_LiYOFOhuWNSbUN32tldDV896rEXOqBVRzL0jAaimzozfICN951KoMNYw9Mp-WfVHt-BN4E01q8KeGcESb1AnQf4a87WJ66S0Q3wQIRzYWagZtjJKhiE3M5zbZtqEWtp7Ct9P1sc6wFlViqt4v2Jze9DePOa7A96roe7vmOACOklnBmFKFUULMA4VspvUoPvjuxfbiz86F3Sbv94_5jcacviTtFlBkqlK7iriWiBJu5sOP88yQvAHMkMDNYzngBDCRMECGnbbuS0lA-dr1eWQEeYyXnOJOSE8o0k4v4kuw6cu-Ods-WyUoSiaSSahYb8Co5Y-IlwFH0AQ9AMS2wMvQNewCZTXslF2DU9WPNpGD1jgDYSG0Ygw11AcZxsO1ErbXB2VZ02NPR9YHuHHxcIjupJBKcGEOJrkRLCuJN_hJG0oCNFLqkR5NQiSJW9U9G_HNjBESvZomNJDxUE3GPfPZpI0mVoMIYvABAX52T-Ky18e3vO_fbvnVLLsjHM78OIDsOk2StbaV2-7-GSGMIf2v2WsUQJkQR_VSOftdSu0ZOM0SR4hqXQvkJQwThMlxjgpjGMA5hlsiC-laSboXdrpdCO19CL0grjySpFacbcRzetl2rauHcwKkXRFkro7zQykrxc6VYKfid_yredySjCDNV8odWVtY0IoTlCYua-pmSlgNhqG8QBKjFzlj_QHWxoAiNYSkeWB3-WNz5kPMyWdIwyeQiGQi_3-MXe1fNZcpAGIqElHziQRa-B0PivsTVC3oeBkN8pjRTvzyPZ_c8rEyFZ4MzI-r3DDCFgmrKF0A7xQdxtP1dbF987jQl39rdDDcul4hzjhSrxkM55wZCM10Kn54vD0ENBrfe1GwYECUaWhKMk24c0MdC_S83jAp6T9gzpmYT9oDJND5o0euxl7TepGsDho8qtUhOItrd3-gJp9NutvBmom_tr3vN_hJhD3AjRgUxYioFx2FHFIrT-Y7ST6APu4cqZ_fG6GOEK3vNGH0hIdjE8hf6s-ivTU8nFE3m8UH27wk2ST3_nMLuKzhehP-v--T6PNi7so87u1Es5E34_SRYIv4ZEShLL5bt7TAFDW57RS2ej_8nnc1hiM4w46NBvp20HNP1qV2iCSEw9QvZUfskPnVPT8kyeQwUI0Oq2dXxqa4yBJdzq8_GjnzAPeYEYietuXi73vGxGwMqr-EcD3t-9OEFn3OLgWFMKDELnc_1j6_ty2jn9MBKeu0Bxe_50Ud3ibJyTGRUCz1ziUFzsFj4RWLBpxxfEEWy4wvO3tzxxZwoi2IN1kSRhTII1zqRRxfuMl1_YQojympuv2goJ_dGVy-XRTAcZlXTX0mE__b4YuTAzxxfcA6rgdUi2efd_fDwb332_vTsU7PT0pftUxHoZTKUDLxvoyWj06lnCFFJufSVjzAUxAhL7U7WH2DMu-pFiBbMcLEIQ_TOOW9eb6eH6vB0c2P3S5vyb60lO8FgsMVhXrPhKoLU0yF6rvMLpWC6McPk1_HF2zq-mG-e5ZxAjWjOOau9RJnGvapx3tu4c3rSCckp_sjPB583Y_d6mY4zGCNIVm7b5DoFwTViWv7EueB84wxu6pRKGT5971bC_DLNF9KlfDnH68mybz_qdWv0dJ1mAUHPHunP2d01w0AmRKYP8xPxC7slnKW6vk0NRZpU7mkXzICBpuwlbiRQBS2TWVPMGRiG8kdWOAILIGA48mdDn-fAZsalZbLGpWVVl7Y7WKv-B4aqY1snfkEvt9pdpgeruSVuWFF0nMLMDHWxkbZh6gqHJVunrLXGjefebtbsvlf5p6hj9-Js8XdTt3s8n51ytc2HKSpX_zBPfWa7rijSrLhGpcqVjqaVqyz8PK1mlSHO4DAtrfBTFp7ULn117HM2_HKl93Oz8Y0E3D_fv8i9ToN0aVcfir7lIoUUm2zHjbsw7I7MdOPG8nt5RDeyo1PTNlbHQjeLflux5wxfezLibMG_WGA4C_AqjRWL9DlKweyWdbsRxe6NF_aSnWqLq_lYMvPq5jvKj9Ufq_8CgMVV5g==?"><img alt="Kroki" src="https://kroki.io/excalidraw/svg/eNrtm1lT20gQgJ_hV2x5X5dh7iNvHAnhysEdtrZSsiRsrWVJSDLYbOW_b0vyIdkyGAKL2YqrAnh6NDOa-bqnu2fyz-pKIx1EbuPdbw23b1u-58TWbeMPKL5x48QLA5DQ7GsS9mI7r9dO0yh5t77e8tJ2r4nssLt-l9x49p1nBethM_Ec-GNt0tpa5PdaXrAeu75rJW6ynlqtdYI0IirvCIq7bpAm0Pafqysr_8C_yaBi106toOW7WdWV8qi40JWiT2GQj48IhamQlJJC7CXb0EPqOiC7svzEHRZn3xse_qQOmoPrD6Yl-83uebC5T66GXV15vn-cDvzipS273YtHo0jSOOy4556TtrMey4XjJ5IQXn9YPw57rXbgJsmkdhhZtpcOsgKMi6LiPd_9Nvzahz_XiCaIa8aM5kyJQjDIBUwgLLjUo9Ki-63QD-Os-99pU1tsNOCmZXdaMIrAGVdIYytIIiuGqR9Wuh29j-LQp6aa0GHbbddrtdNMxDQyFVHi5jNLtNEGxkNVUZx1Fu06-aL-NZ6EwBlOQtDz_eHIstL3EwQmkl7kWMWyEamU0AozGBkthL4XdCq1_dDuTNYYin78MQNT6vbTGY6owvUcKc6FUXr0Rvdy1N3auwzY-d5SoaMEUkRoCvNGK-hQjZRm5fLng0eoKWSmQcHEMGIIYy8MClsIlOF6hUF67N1lM0jxpOiD1fX8wWTic37g7bd8b_LiYOFOhuWNSbUN32tldDV896rEXOqBVRzL0jAaimzozfICN951KoMNYw9Mp-WfVHt-BN4E01q8KeGcESb1AnQf4a87WJ66S0Q3wQIRzYWagZtjJKhiE3M5zbZtqEWtp7Ct9P1sc6wFlViqt4v2Jze9DePOa7A96roe7vmOACOklnBmFKFUULMA4VspvUoPvjuxfbiz86F3Sbv94_5jcacviTtFlBkqlK7iriWiBJu5sOP88yQvAHMkMDNYzngBDCRMECGnbbuS0lA-dr1eWQEeYyXnOJOSE8o0k4v4kuw6cu-Ods-WyUoSiaSSahYb8Co5Y-IlwFH0AQ9AMS2wMvQNewCZTXslF2DU9WPNpGD1jgDYSG0Ygw11AcZxsO1ErbXB2VZ02NPR9YHuHHxcIjupJBKcGEOJrkRLCuJN_hJG0oCNFLqkR5NQiSJW9U9G_HNjBESvZomNJDxUE3GPfPZpI0mVoMIYvABAX52T-Ky18e3vO_fbvnVLLsjHM78OIDsOk2StbaV2-7-GSGMIf2v2WsUQJkQR_VSOftdSu0ZOM0SR4hqXQvkJQwThMlxjgpjGMA5hlsiC-laSboXdrpdCO19CL0grjySpFacbcRzetl2rauHcwKkXRFkro7zQykrxc6VYKfid_yredySjCDNV8odWVtY0IoTlCYua-pmSlgNhqG8QBKjFzlj_QHWxoAiNYSkeWB3-WNz5kPMyWdIwyeQiGQi_3-MXe1fNZcpAGIqElHziQRa-B0PivsTVC3oeBkN8pjRTvzyPZ_c8rEyFZ4MzI-r3DDCFgmrKF0A7xQdxtP1dbF987jQl39rdDDcul4hzjhSrxkM55wZCM10Kn54vD0ENBrfe1GwYECUaWhKMk24c0MdC_S83jAp6T9gzpmYT9oDJND5o0euxl7TepGsDho8qtUhOItrd3-gJp9NutvBmom_tr3vN_hJhD3AjRgUxYioFx2FHFIrT-Y7ST6APu4cqZ_fG6GOEK3vNGH0hIdjE8hf6s-ivTU8nFE3m8UH27wk2ST3_nMLuKzhehP-v--T6PNi7so87u1Es5E34_SRYIv4ZEShLL5bt7TAFDW57RS2ej_8nnc1hiM4w46NBvp20HNP1qV2iCSEw9QvZUfskPnVPT8kyeQwUI0Oq2dXxqa4yBJdzq8_GjnzAPeYEYietuXi73vGxGwMqr-EcD3t-9OEFn3OLgWFMKDELnc_1j6_ty2jn9MBKeu0Bxe_50Ud3ibJyTGRUCz1ziUFzsFj4RWLBpxxfEEWy4wvO3tzxxZwoi2IN1kSRhTII1zqRRxfuMl1_YQojympuv2goJ_dGVy-XRTAcZlXTX0mE__b4YuTAzxxfcA6rgdUi2efd_fDwb332_vTsU7PT0pftUxHoZTKUDLxvoyWj06lnCFFJufSVjzAUxAhL7U7WH2DMu-pFiBbMcLEIQ_TOOW9eb6eH6vB0c2P3S5vyb60lO8FgsMVhXrPhKoLU0yF6rvMLpWC6McPk1_HF2zq-mG-e5ZxAjWjOOau9RJnGvapx3tu4c3rSCckp_sjPB583Y_d6mY4zGCNIVm7b5DoFwTViWv7EueB84wxu6pRKGT5971bC_DLNF9KlfDnH68mybz_qdWv0dJ1mAUHPHunP2d01w0AmRKYP8xPxC7slnKW6vk0NRZpU7mkXzICBpuwlbiRQBS2TWVPMGRiG8kdWOAILIGA48mdDn-fAZsalZbLGpWVVl7Y7WKv-B4aqY1snfkEvt9pdpgeruSVuWFF0nMLMDHWxkbZh6gqHJVunrLXGjefebtbsvlf5p6hj9-Js8XdTt3s8n51ytc2HKSpX_zBPfWa7rijSrLhGpcqVjqaVqyz8PK1mlSHO4DAtrfBTFp7ULn117HM2_HKl93Oz8Y0E3D_fv8i9ToN0aVcfir7lIoUUm2zHjbsw7I7MdOPG8nt5RDeyo1PTNlbHQjeLflux5wxfezLibMG_WGA4C_AqjRWL9DlKweyWdbsRxe6NF_aSnWqLq_lYMvPq5jvKj9Ufq_8CgMVV5g==?"/></a></p>
+</div>
+</div>
+</input></input></div>
+<p><br/></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">markdown</label><label for="__tabbed_2_2">rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>![[my-circles.excalidraw]]</code></p>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://kroki.io/excalidraw/svg/eNrVWVtX20YQfja_grqvQez9krcQAkkpISFpSOnp6Vlk2V6QJUVaY3BP_ntHN1vypXFS0hg4GGtnvLM7832zM-u_dzpdd58E3ae73eDON6HtpWbSfQLDt0Ga2TgCCckfs3ic-oXe0Lkke7q_P7BuOL7y_Hi0P81urT-1JtqPrzLbgzd789n2knA8sNF-GoSByYJs35nBPvaUh2VhCIZHQeQymPuPnU7nb_hrLCoMbZIFuWKnuSZMUGvodRwVq8NYKYQYkaIU2-wQ5ndBD2R9E2ZBNZw_d8PLN-fn9vzEjPknM53e3YQnz0eVqb4Nw3fuPiy3bPzhOK1Xkbk0vgkubM8Nc4vNwdknshg2X-mn8XgwjIIsm2vHifGtu88HULUREw2Kj1aPd_B2j3NdPhWaAlymJG_aex6HcZrb-xkVP5XFK-PfDMBs1JsrYG7MVb9SmFSLJ5iVA8PADoauOZIFhdM0UpQIiWg5ms-avOoVwfpztr2oV20vGodhtYR89MU8tHPJOOmZMiBYSMmVwBJjVMUrtNFNSzuM_Zt59GDo85PNQSL0SpAoihDnArENMPLs7Ut9d0yvf3GxsySduFf947ttwgjDqIkR-V8wwpCPuPxqjAjBBNVEy--MEfk9MIJXYwRzTpUE7G8CkjG5uCf3z49PouPUXhz2Pt5eXN5vFUjq2OSaROn_AhKpOeqTrwYJ5owTSM6YbzFKTJrGkyWMSLwaIopgjiimcgOIJIfu44n0w0QG9ujgU3B6ZcbTrTprlPKUJBxD1lScN_CCqfIg6EQrzbEWos6qD4McIGDLLuILQIJVe5BdCMKIKUQpxW1caYQkI4xudkIV8Z4FnORPn78NZ2ojnNWuMqk7sFHPRoP5IvqxP84tIY9wDXkc5pZEUfh9UioMTJLDzxMgmnlfiUpaFU6vCnxd49MLEUnRbewoiHpzm40Fmsw9j0cj62BTb2IbuZa4WOuznAjDwPRaIpiwKWjRJcknqou4Tqd87ZQIg__FvzIetWxN5EGwFPHy0zvVy8bExWhNcqecaSKQoBswV37go76-zI7v3ly9fXl9-qs7OkDbxFxKkIeQIoRITLisN5V_jjPkSSSQzt2pZ-XkwxQGAntAPKq1pkhzqtUScbmHCCNYSympUnyBuFA1QAiwxo-YuBgAqgmTBP64VLhFXOUxhRnK2YsYQ4qvIu6Hy-urk0N2-oiIu7c68iBYDvk3MnfNkUsQlBWQM-gmxHWvs7OD6cfpzW16NDh-0X-rz6eX20RcLAR4C3PFKTgMfMcahy6jHgdIcSY1AuyIh2Qu5FVPS8UwEwpBOcjEAnW18ATGEio2iK_GjCzU-0QIrhV_tMTdg4wpKVUEXCsUOEAK1qKu9gC9pHY-9AKrqMtGF89wyl8-JuquCX2nsxTybz1zNVlz5kLxD50i26ShyoJf6dlf1-TmdHKqovCTwh9evv7h1PUwZRKOLch8HAtooUTzFJbUU1xLKhQkRiSaNzeEeAJOacASVvO7qYfhMvUEgdocFoQwY3yRyQQJj2JCFVdaMyiVZYvKUkHhAN3h_01l-e1UblFjm7m2MjKdznJEvsg0F9y5JaIxuvqIhOJWcMhcm9yAzrqGLToVRevSE5z10Bda4KBFkvA2KTA0WQTL7bjPqkITR-6dnZZF0HzoyIxseD_3cYEU2PnERG7Xxbv1dX6-ZjN5X0m7c-VnoR1ExWV40G9gzFnfhDOZi5NK5INNY6MgfdVmTpzagY1M-H6V_a8AddX6Lt_GKSbhuBJoA1DPjuVtKvXqLqfU1A8OaqX_HdPQGaK8O2T08YLaN9EPA_TM9leAGdd3WYspWinGqMabZOhZe7hNFw4CN68YHh7MNVnWgRlOVUJxXZU_SiwPzW2w6-wo-BFgnht_ADRjSimCUkaSDeD82-E99idmsFVfjtRfPuaa8jukZvWFcgMpDL0mf7xgfn32fvf0xU8_Asq16RzIO0UB3jVJ8s6BA6qGpeuG4KPCcuH_fJ7urQ0mBysC2C9-Sh1_nKZ5r--C0bv1QGiqrZjRpSbKEpNrLKkfrUP_sukWD5bFKxjRVDpf5EZTeLbIktYSl6K-KG3BpCl8vzLo7bWv6cSaSi_W9mTdzE_jMPyY30gx6fHG2O_5IUGRJyoqd6dxPKob2O6tCcdF5qqz34KvZmQrmVcaG6S2V-11vsw8ym8MZLsSba3JysicJQ5yZZOf3SQNbm08zo7bM-4Ua8lTYlD02p93Pu_8A152BPY=?"><img alt="Kroki" src="https://kroki.io/excalidraw/svg/eNrVWVtX20YQfja_grqvQez9krcQAkkpISFpSOnp6Vlk2V6QJUVaY3BP_ntHN1vypXFS0hg4GGtnvLM7832zM-u_dzpdd58E3ae73eDON6HtpWbSfQLDt0Ga2TgCCckfs3ic-oXe0Lkke7q_P7BuOL7y_Hi0P81urT-1JtqPrzLbgzd789n2knA8sNF-GoSByYJs35nBPvaUh2VhCIZHQeQymPuPnU7nb_hrLCoMbZIFuWKnuSZMUGvodRwVq8NYKYQYkaIU2-wQ5ndBD2R9E2ZBNZw_d8PLN-fn9vzEjPknM53e3YQnz0eVqb4Nw3fuPiy3bPzhOK1Xkbk0vgkubM8Nc4vNwdknshg2X-mn8XgwjIIsm2vHifGtu88HULUREw2Kj1aPd_B2j3NdPhWaAlymJG_aex6HcZrb-xkVP5XFK-PfDMBs1JsrYG7MVb9SmFSLJ5iVA8PADoauOZIFhdM0UpQIiWg5ms-avOoVwfpztr2oV20vGodhtYR89MU8tHPJOOmZMiBYSMmVwBJjVMUrtNFNSzuM_Zt59GDo85PNQSL0SpAoihDnArENMPLs7Ut9d0yvf3GxsySduFf947ttwgjDqIkR-V8wwpCPuPxqjAjBBNVEy--MEfk9MIJXYwRzTpUE7G8CkjG5uCf3z49PouPUXhz2Pt5eXN5vFUjq2OSaROn_AhKpOeqTrwYJ5owTSM6YbzFKTJrGkyWMSLwaIopgjiimcgOIJIfu44n0w0QG9ujgU3B6ZcbTrTprlPKUJBxD1lScN_CCqfIg6EQrzbEWos6qD4McIGDLLuILQIJVe5BdCMKIKUQpxW1caYQkI4xudkIV8Z4FnORPn78NZ2ojnNWuMqk7sFHPRoP5IvqxP84tIY9wDXkc5pZEUfh9UioMTJLDzxMgmnlfiUpaFU6vCnxd49MLEUnRbewoiHpzm40Fmsw9j0cj62BTb2IbuZa4WOuznAjDwPRaIpiwKWjRJcknqou4Tqd87ZQIg__FvzIetWxN5EGwFPHy0zvVy8bExWhNcqecaSKQoBswV37go76-zI7v3ly9fXl9-qs7OkDbxFxKkIeQIoRITLisN5V_jjPkSSSQzt2pZ-XkwxQGAntAPKq1pkhzqtUScbmHCCNYSympUnyBuFA1QAiwxo-YuBgAqgmTBP64VLhFXOUxhRnK2YsYQ4qvIu6Hy-urk0N2-oiIu7c68iBYDvk3MnfNkUsQlBWQM-gmxHWvs7OD6cfpzW16NDh-0X-rz6eX20RcLAR4C3PFKTgMfMcahy6jHgdIcSY1AuyIh2Qu5FVPS8UwEwpBOcjEAnW18ATGEio2iK_GjCzU-0QIrhV_tMTdg4wpKVUEXCsUOEAK1qKu9gC9pHY-9AKrqMtGF89wyl8-JuquCX2nsxTybz1zNVlz5kLxD50i26ShyoJf6dlf1-TmdHKqovCTwh9evv7h1PUwZRKOLch8HAtooUTzFJbUU1xLKhQkRiSaNzeEeAJOacASVvO7qYfhMvUEgdocFoQwY3yRyQQJj2JCFVdaMyiVZYvKUkHhAN3h_01l-e1UblFjm7m2MjKdznJEvsg0F9y5JaIxuvqIhOJWcMhcm9yAzrqGLToVRevSE5z10Bda4KBFkvA2KTA0WQTL7bjPqkITR-6dnZZF0HzoyIxseD_3cYEU2PnERG7Xxbv1dX6-ZjN5X0m7c-VnoR1ExWV40G9gzFnfhDOZi5NK5INNY6MgfdVmTpzagY1M-H6V_a8AddX6Lt_GKSbhuBJoA1DPjuVtKvXqLqfU1A8OaqX_HdPQGaK8O2T08YLaN9EPA_TM9leAGdd3WYspWinGqMabZOhZe7hNFw4CN68YHh7MNVnWgRlOVUJxXZU_SiwPzW2w6-wo-BFgnht_ADRjSimCUkaSDeD82-E99idmsFVfjtRfPuaa8jukZvWFcgMpDL0mf7xgfn32fvf0xU8_Asq16RzIO0UB3jVJ8s6BA6qGpeuG4KPCcuH_fJ7urQ0mBysC2C9-Sh1_nKZ5r--C0bv1QGiqrZjRpSbKEpNrLKkfrUP_sukWD5bFKxjRVDpf5EZTeLbIktYSl6K-KG3BpCl8vzLo7bWv6cSaSi_W9mTdzE_jMPyY30gx6fHG2O_5IUGRJyoqd6dxPKob2O6tCcdF5qqz34KvZmQrmVcaG6S2V-11vsw8ym8MZLsSba3JysicJQ5yZZOf3SQNbm08zo7bM-4Ua8lTYlD02p93Pu_8A152BPY=?"/></a></p>
+</div>
+</div>
+</input></input></div>
+<h4 id="todo-with-custom-size-captions">TODO - With custom size &amp; Captions<a class="headerlink" href="#todo-with-custom-size-captions" title="Permanent link">¶</a></h4>
+<ul>
+<li><code>![[my-draw.excalidraw|200]]</code></li>
+<li><code>![[my-draw.excalidraw|caption]]</code></li>
+<li><code>![[my-draw.excalidraw|200|caption]]</code></li>
+</ul>
+<hr/>
+<h3 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">¶</a></h3>
+<p>I include <code>my-draw.excalidraw.md</code> as document to show <code>the directory structure</code> and <code>how the xxx.excalidraw.md file consists of</code> . In most case, you need only the rendered image, not <code>xxx.excalidraw.md</code> as document. You can use <a href="https://github.com/apenwarr/mkdocs-exclude"><code>mkdocs-exclude-plugin</code> </a> with blow config to exclude all excalidraw documents.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obsidian-support</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">exclude</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">glob</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"*/*.excalidraw.md"</span>
+</code></pre></div>
+<h3 id="shoulders-of-giants">shoulders of giants...<a class="headerlink" href="#shoulders-of-giants" title="Permanent link">¶</a></h3>
+<h4 id="excalidraw-obsidian-excalidraw-plugin">excalidraw, obsidian-excalidraw-plugin<a class="headerlink" href="#excalidraw-obsidian-excalidraw-plugin" title="Permanent link">¶</a></h4>
+<p>If you use <code>obsidian</code>, you might know about this plugin. This is one of the most popular obsidian plugin. It embeds the <a href="https://excalidraw.com/">excalidraw</a> - a web based hand-drawn diagram editor to obsidian perfectly.</p>
+<p>With below option enabled which is default,</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="1.png"><img alt="1.png" src="1.png"/></a>
+</p>
+<figcaption>`Filename&gt;.excalidraw.md or .md` option</figcaption>
+</figure>
+<p>your new excalidraw file will get name <code>my-draw.excalidraw.md</code>. You can embed this file to your document in wikilink syntax - <code>![[my-draw.excalidraw]]</code></p>
+<p>But mkdocs does not know about <code>wikilink syntax</code> and <code>how to treat this file</code>.</p>
+<h4 id="kroki">kroki<a class="headerlink" href="#kroki" title="Permanent link">¶</a></h4>
+<div class="admonition quote">
+<p class="admonition-title">kroki</p>
+<p><a href="https://kroki.io/"><code>kroki</code></a> creates <strong>diagrams</strong> from <strong>textual</strong> descriptions!
+Kroki provides a unified API with support for BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag), BPMN, Bytefield, C4 (with PlantUML), D2, DBML, Ditaa, Erd, <mark>Excalidraw</mark>, GraphViz, Mermaid, Nomnoml, Pikchr, PlantUML, Structurizr, SvgBob, UMLet, Vega, Vega-Lite, WaveDrom... and more to come!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>kroki</code> provied a API with support fo <code>Excalidraw</code></p>
+</div>
+<h4 id="mkdocs-kroki-plugin">mkdocs-kroki-plugin<a class="headerlink" href="#mkdocs-kroki-plugin" title="Permanent link">¶</a></h4>
+<p>This plugin 
+- uses <code>the code block syntax</code> for the textual descriptions for the kroki diagram. 
+- process the API request to <code>https://kroki.io/</code> and get the processed image (link or image itself).
+- use this image and serve as markdown image link</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.view", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

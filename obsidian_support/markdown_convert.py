@@ -10,6 +10,7 @@ A template method that applies conversion for every regex matches
 def markdown_convert(markdown: str, page: Page, conversion: AbstractConversion) -> str:
     converted_markdown = ""
     index = 0
+
     for obsidian_syntax in conversion.obsidian_regex_pattern.finditer(markdown):
         ## found range of markdown where the obsidian_regex matches
         start = obsidian_syntax.start()

@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-python@v2
 
       # retrieve your distributions here
+      - run: pip install -r requirements
       - run: python setup.py sdist
 
       # retrieve your distributions here

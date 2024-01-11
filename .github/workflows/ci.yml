@@ -12,8 +12,7 @@ jobs:
     environment:
       name: pypi
       url: https://pypi.org/p/mkdocs-obsidian-support-plugin
-    permissions:
-      write-all
+    permissions: write-all
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2

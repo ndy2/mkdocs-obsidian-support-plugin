@@ -13,7 +13,7 @@ jobs:
       name: pypi
       url: https://pypi.org/p/mkdocs-obsidian-support-plugin
     permissions:
-      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+      write-all
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2

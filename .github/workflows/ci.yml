@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  pypi-publish:
+  ci-cd:
     name: Upload release to PyPI
     runs-on: ubuntu-latest
     environment:
@@ -15,17 +15,17 @@ jobs:
     permissions:
       id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
-      # retrieve your distributions here
-      - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
       - name: Set up Python 3 ⚙️ 🐍
         uses: actions/setup-python@v2
+
+      # retrieve your distributions here
+      - run: python setup.py sdist
+
+      # retrieve your distributions here
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
 
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox

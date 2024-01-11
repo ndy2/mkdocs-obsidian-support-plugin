@@ -15,7 +15,7 @@ unit tests for `obsidian syntax` to `mkdocs-material syntax` conversion
 
 class ConversionTest(TestCase):
 
-    @parameterized.expand(['indent', 'complex', 'edgecase'])
+    @parameterized.expand(['indent', 'complex', 'edgecase', 'collapsable'])
     def test_callout_to_admonition(self, test):
         self.assert_template("admonition", test, AdmonitionConvert())
 
@@ -35,7 +35,7 @@ class ConversionTest(TestCase):
         expected = dest.read()
 
         ## when
-        actual = markdown_convert(given, conversion)
+        actual = markdown_convert(given, None, conversion)
 
         ## then
         self.assertEqual(expected, actual)

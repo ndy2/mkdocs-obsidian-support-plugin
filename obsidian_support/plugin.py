@@ -4,6 +4,7 @@ from obsidian_support.conversion.admonition import AdmonitionConvert
 from obsidian_support.conversion.admonition_backquotes import AdmonitionBackquotesConvert
 from obsidian_support.conversion.excalidraw import ExcalidrawConvert
 from obsidian_support.conversion.image_link import ImageLinkConvert
+from obsidian_support.conversion.tags import TagsConvert
 from obsidian_support.markdown_convert import markdown_convert
 
 """
@@ -21,5 +22,6 @@ class ObsidianSupportPlugin(BasePlugin):
         markdown = markdown_convert(markdown, page, AdmonitionBackquotesConvert())
         markdown = markdown_convert(markdown, page, ExcalidrawConvert())
         markdown = markdown_convert(markdown, page, ImageLinkConvert())
+        markdown = markdown_convert(markdown, page, TagsConvert())
 
         return markdown

@@ -49,9 +49,17 @@ markdown_extensions:
 
 plugins:
   - glightbox
+  - search
   - obsidian-support
 #  - exclude:
 #        glob:
 #            - "*/*.excalidraw.md"
   - kroki:
         FencePrefix: 'kroki-'
+
+extra_css:
+  - assets/css/obsidian_tags.css
+
+extra_javascript:
+  - https://code.jquery.com/jquery-3.7.1.min.js
+  - assets/javascript/obsidian_tags.js

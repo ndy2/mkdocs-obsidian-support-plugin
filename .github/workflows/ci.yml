@@ -23,6 +23,9 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python setup.py sdist
 
+      # run pytest
+      - run: cd test; python -m pytest
+
       # retrieve your distributions here
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

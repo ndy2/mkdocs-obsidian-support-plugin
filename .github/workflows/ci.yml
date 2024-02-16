@@ -17,7 +17,6 @@ jobs:
 
       # retrieve your distributions here
       - run: pip install -r requirements.txt
-      - run: python setup.py sdist
 
       # run pytest
       - run: cd test; python -m pytest
@@ -32,6 +31,8 @@ jobs:
       url: https://pypi.org/p/mkdocs-obsidian-support-plugin
     permissions: write-all
     steps:
+      - run: python setup.py sdist
+
       # retrieve your distributions here
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

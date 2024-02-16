@@ -17,8 +17,12 @@ jobs:
 
       # retrieve your distributions here
       - run: pip install -r requirements.txt
-      - run: python setup.py sdist
 
+      # run pytest
+      - run: cd test; python -m pytest
+
+      # create & archive artifact
+      - run: python setup.py sdist
       - name: Archive artifact
         uses: actions/upload-artifact@v4
         with:
@@ -26,9 +30,6 @@ jobs:
           path: |
             dist
             !dist/**/*.md
-
-      # run pytest
-      - run: cd test; python -m pytest
 
   release:
     name: Upload release to PyPI and Deploy Github Pages
@@ -40,12 +41,13 @@ jobs:
       url: https://pypi.org/p/mkdocs-obsidian-support-plugin
     permissions: write-all
     steps:
-      # retrieve your distributions here
+      # retrieve artifact here
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
 
+      # publish it to pypi
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
 

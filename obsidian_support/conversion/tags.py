@@ -6,7 +6,7 @@ a strategy that convert obsidian #tags (refer https://help.obsidian.md/Editing+a
 to **tags**{: .hash} (refer https://python-markdown.github.io/extensions/attr_list/) in markdown
 """
 
-OBSIDIAN_TAGS_REGEX = "(?<!\\)#(?P<tags>[\w\-_\/]+)(?![^\[\(`]*[\]\)`])"
+OBSIDIAN_TAGS_REGEX = r"(?<!\\)#(?P<tags>[\w\-_\/]+)(?![^\[\(`]*[\]\)`])"
 OBSIDIAN_TAGS_REGEX_GROUPS = ['tags']
 
 

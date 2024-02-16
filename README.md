@@ -24,6 +24,10 @@ By default `obsidian tags` are just shown as bold text. Obsidian style can be ac
   padding: 5px;
   font-weight: normal;
 }
+
+[data-md-color-scheme="slate"] .hash {
+  background-color: #292433;
+}
 ```
 
 Activating this inside the mkdocs.yml

@@ -46,9 +46,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-      - run: ls
-      - run: pwd
-      - run: 7z x dist.zip
+      - run: mkdir dist; mv mkdocs-obsidian-support-plugin-*.tar.gz dist
 
       # publish it to pypi
       - name: Publish package distributions to PyPI

@@ -8,7 +8,7 @@ title: Admonition Blockquotes
 > - block-styled admonition - [github>javalen>admonitions](https://github.com/javalent/admonitions)
 > - [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 >   
->  Requires
+>  Requirement
 >  - obsidian plugin - admonition
 
 ###  Admonition Blockquotes

@@ -6,13 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci-cd:
-    name: Upload release to PyPI
+  test:
+    name: run pytest
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/mkdocs-obsidian-support-plugin
-    permissions: write-all
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -21,12 +17,42 @@ jobs:
 
       # retrieve your distributions here
       - run: pip install -r requirements.txt
-      - run: python setup.py sdist
 
-      # retrieve your distributions here
+      # run pytest
+      - run: cd test; python -m pytest
+
+      # create & archive artifact
+      - run: python setup.py sdist
+      - name: Archive artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: |
+            dist
+            !dist/**/*.md
+
+  release:
+    name: Upload release to PyPI and Deploy Github Pages
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/mkdocs-obsidian-support-plugin
+    permissions: write-all
+    steps:
+      # retrieve artifact here
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+      - run: mkdir dist; mv mkdocs-obsidian-support-plugin-*.tar.gz dist
+
+      # publish it to pypi
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
 
+      # deploy github pages
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox
       - run: pip3 install mkdocs-exclude

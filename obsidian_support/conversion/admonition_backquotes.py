@@ -1,5 +1,6 @@
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 from mkdocs.structure.pages import Page
+
+from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 a strategy that convert [obsidian block-styled admonition](https://github.com/javalent/admonitions)
@@ -19,19 +20,20 @@ class AdmonitionBackquotesConvert(AbstractConversion):
 
 
 def create_admonition(ad_type: str, title: str, collapse: str, lines: str) -> str:
+    lines = lines.strip()
+    lines = "    " + lines.replace("\n", "\n    ")
+
     if title is None:
         title = ""
     else:
-        title = '"'+ title + '"'
+        title = ' \"' + title + '\"'
 
     if collapse == "closed":
-        collapse = '??? '
+        collapse = '???'
     elif collapse == "open":
-        collapse = '???+ '
+        collapse = '???+'
     else:
-        collapse = "!!! "
+        collapse = "!!!"
 
-    lines = lines.replace("\n", "\n\n    ")
-
-    admonition = "\n"+ collapse + ad_type + ' ' + title + "\n    " + lines
+    admonition = collapse + " " + ad_type + title + "\n\n" + lines
     return admonition

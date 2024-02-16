@@ -1,4 +1,5 @@
 mkdocs~=1.4.2
-
-parameterized~=0.8.1
 setuptools==67.3.3
+
+pytest
+assertpy

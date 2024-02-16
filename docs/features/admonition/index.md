@@ -1,11 +1,17 @@
 ---
 title: Admonition
 ---
- 
+  
 > [!note]  feature - admonition
 > convert `obsidian callout` to `mkdocs-material admonition`
+> 
+> - [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
+> - [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 
-###  [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
+See [Demo](demo) for more examples
+## Basic Usage
+
+###  obsidian callout
 
 === "obsidian markdown"
 
@@ -21,7 +27,7 @@ title: Admonition
      ![[images/1.png]]
 
 
-### [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions)
+### mkdocs-material admonition
 
 === "mkdocs-material markdown"
 
@@ -40,6 +46,38 @@ title: Admonition
         
         I became mkdocs admonition!
 
+
+
+## Foldable/Collsapsible
+
+###  obsidian callout
+
+=== "obsidian markdown"
+
+    ```
+    > [!faq]- Are callouts foldable? 
+    > Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
+    ```
+
+=== "obsidian rendered"
+
+     ![[images/2.png]]
+
+### mkdocs-material admonition
+
+=== "mkdocs-material markdown"
+
+    ```
+    ??? note "Are callouts foldable?"
+    
+        Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
+    ```
+
+=== "mkdocs-material rendered"
+
+    ??? note "Are callouts foldable?"
+    
+        Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
 
 
 ## 💡 Notes

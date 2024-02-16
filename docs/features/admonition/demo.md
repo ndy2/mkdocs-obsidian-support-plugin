@@ -1,5 +1,4 @@
-
-### Examples
+## Examples
 
 `1. basic`
 

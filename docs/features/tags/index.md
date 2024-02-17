@@ -29,7 +29,7 @@ see [this PR](https://github.com/ndy2/mkdocs-obsidian-support-plugin/pull/8/file
 By default `obsidian tags` are just shown as bold text. Obsidian style can be activated by using the following css file,
 that has to be activated inside the mkdocs.yml.
 
-```
+```css
 .hash {
   background-color: #f3eefd;
   border-radius: 20px;
@@ -44,14 +44,14 @@ that has to be activated inside the mkdocs.yml.
 
 Activating this inside the mkdocs.yml
 
-```
+```yaml
 extra_css:
   - assets/css/obsidian_tags.css
 ```
 
 By using the following javascript, the search menu will be opened by clicking the tags.
 
-```
+```javascript
 $('.hash').each(function() {
   var link = $(this).html();
   $(this).contents().wrap('<a href="?q='+link+'">#</a>');
@@ -60,7 +60,7 @@ $('.hash').each(function() {
 
 This have to be activated inside the mkdocs.yml.
 
-```
+```yaml
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.1.min.js
   - assets/javascript/obsidian_tags.js

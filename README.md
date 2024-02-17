@@ -36,3 +36,8 @@ plugins:
 > [!info]
 >
 > See https://ndy2.github.io/mkdocs-obsidian-support-plugin/ for more details
+
+### Other plugins that helps mkdocs + obsidian
+
+- https://github.com/sondregronas/mkdocs-callouts
+- https://github.com/orbikm/mkdocs-ezlinks-plugin

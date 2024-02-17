@@ -51,9 +51,10 @@ plugins:
   - glightbox
   - search
   - obsidian-support
-#  - exclude:
-#        glob:
-#            - "*/*.excalidraw.md"
+  - exclude:
+        glob:
+            - "*/excalidraw/*.md"
+            - "*/*.excalidraw.md"
   - kroki:
         FencePrefix: 'kroki-'
 

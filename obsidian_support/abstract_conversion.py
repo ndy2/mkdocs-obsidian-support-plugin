@@ -21,7 +21,7 @@ Every conversion should extends this class
 class AbstractConversion(metaclass=ABCMeta):
 
     def __init__(self, regex, regex_groups):
-        self.obsidian_regex_pattern = re.compile(regex)
+        self.obsidian_regex_pattern = re.compile(regex, flags=re.VERBOSE)
         self.obsidian_regex_groups = regex_groups
 
     @abstractmethod

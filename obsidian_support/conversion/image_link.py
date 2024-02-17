@@ -1,16 +1,15 @@
-import re
-
 from inspect import cleandoc
 
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 from mkdocs.structure.pages import Page
+
+from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 a strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
 to [mkdocs-material images](https://squidfunk.github.io/mkdocs-material/reference/images/) in markdown link
 """
 
-OBSIDIAN_WIKILINK_IMAGE_REGEX = "!\\[\\[(?P<image_path>[^\\|^\\]]+)(?P<tags>|.+)?\\]\\]"
+OBSIDIAN_WIKILINK_IMAGE_REGEX = r"!\[\[(?P<image_path>[^\|^\]]+)(?P<tags>|.+)?\]\]"
 OBSIDIAN_WIKILINK_IMAGE_REGEX_GROUPS = ['image_path', 'tags']
 
 

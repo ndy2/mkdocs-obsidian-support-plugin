@@ -1,8 +1,8 @@
 import re
-from inspect import cleandoc
+
+from mkdocs.structure.pages import Page
 
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
-from mkdocs.structure.pages import Page
 
 """
 a strategy that convert [excalidraw link] to [excalidraw kroki code block]
@@ -21,11 +21,11 @@ class ExcalidrawConvert(AbstractConversion):
         return convert_excalidraw(*syntax_groups, page)
 
 
-def convert_excalidraw(excalidraw_path: str, page:Page) -> str:
+def convert_excalidraw(excalidraw_path: str, page: Page) -> str:
     src_uri = page.file.src_uri
-    src_dir_index = src_uri[:len(src_uri)-1].rfind('/')
+    src_dir_index = src_uri[:len(src_uri) - 1].rfind('/')
     src_dir_path = src_uri[:src_dir_index] + "/"
-    excalidraw_file_path = "docs/" + src_dir_path + excalidraw_path+'.md'
+    excalidraw_file_path = "docs/" + src_dir_path + excalidraw_path + '.md'
 
     f = open(excalidraw_file_path, 'r')
     excalidraw_markdown = f.read()

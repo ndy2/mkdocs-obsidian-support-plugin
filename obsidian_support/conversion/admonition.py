@@ -7,8 +7,14 @@ a strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+
 to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 """
 
-OBSIDIAN_CALL_OUT_REGEX = "\n ?> ?\\[!(?P<type>[a-z]+)\\](?P<collapsable>\\+|\\-?)(?P<title> .*)?(?P<lines>(\n ?>.*)*)"
-OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'collapsable', 'title', 'lines']
+OBSIDIAN_CALL_OUT_REGEX = r"""
+    \n[ ]?>[ ]?                     # callout must starts with `\n` and `>`
+    \[!(?P<type>[a-z]+)\]           # callout type
+    (?P<collapsable>\+|\-?)         # callout collapsable (optional) - add `+` or `-` to make foldable callout 
+    (?P<title>[ ].*)?               # callout title (optional)
+    (?P<contents>(\n[ ]?>.*)*)      # callout contents
+"""
+OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'collapsable', 'title', 'contents']
 
 
 class AdmonitionConvert(AbstractConversion):
@@ -19,11 +25,11 @@ class AdmonitionConvert(AbstractConversion):
         return create_admonition(*syntax_groups)
 
 
-def create_admonition(ad_type: str, collapsable: str, title: str, lines: str) -> str:
-    lines = lines.replace("\n> ", "\n    ")
-    lines = lines.replace("\n > ", "\n    ")
-    lines = lines.replace("\n>", "\n    ")
-    lines = lines.replace("\n >", "\n    ")
+def create_admonition(ad_type: str, collapsable: str, title: str, contents: str) -> str:
+    contents = contents.replace("\n> ", "\n    ")
+    contents = contents.replace("\n > ", "\n    ")
+    contents = contents.replace("\n>", "\n    ")
+    contents = contents.replace("\n >", "\n    ")
 
     if title is None:
         title = ""
@@ -39,5 +45,5 @@ def create_admonition(ad_type: str, collapsable: str, title: str, lines: str) ->
     else:
         ad_syntax_type = "!!! "
 
-    admonition = "\n" + ad_syntax_type + ad_type + title + "\n" + lines
+    admonition = "\n" + ad_syntax_type + ad_type + title + "\n" + contents
     return admonition

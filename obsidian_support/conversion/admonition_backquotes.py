@@ -7,8 +7,14 @@ a strategy that convert [obsidian block-styled admonition](https://github.com/ja
 to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 """
 
-OBSIDIAN_CALL_OUT_REGEX = r"```(ad-(?P<type>[a-z-]+))\n((title: (?P<title>[^\n]+))\n)?((collapse: (?P<collapse>[^\n]+))\n)?(?P<lines>((?!```).*\n)*)```"
-OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'title', 'collapse', 'lines']
+OBSIDIAN_CALL_OUT_REGEX = r"""
+    ```(ad-(?P<type>[a-z-]+))\n              # callout type
+    ((title:[ ](?P<title>[^\n]+))\n)?        # callout title (optional)
+    ((collapse:[ ](?P<collapse>[^\n]+))\n)?  # callout collapsable (optional) - add `closed` or `open` to make foldable callout
+    (?P<contents>((?!```).*\n)*)             # callout contents
+    ```
+"""
+OBSIDIAN_CALL_OUT_REGEX_GROUPS = ['type', 'title', 'collapse', 'contents']
 
 
 class AdmonitionBackquotesConvert(AbstractConversion):
@@ -19,9 +25,9 @@ class AdmonitionBackquotesConvert(AbstractConversion):
         return create_admonition(*syntax_groups)
 
 
-def create_admonition(ad_type: str, title: str, collapse: str, lines: str) -> str:
-    lines = lines.strip()
-    lines = "    " + lines.replace("\n", "\n    ")
+def create_admonition(ad_type: str, title: str, collapse: str, contents: str) -> str:
+    contents = contents.strip()
+    contents = "    " + contents.replace("\n", "\n    ")
 
     if title is None:
         title = ""
@@ -35,5 +41,5 @@ def create_admonition(ad_type: str, title: str, collapse: str, lines: str) -> st
     else:
         collapse = "!!!"
 
-    admonition = collapse + " " + ad_type + title + "\n\n" + lines
+    admonition = collapse + " " + ad_type + title + "\n\n" + contents
     return admonition

@@ -6,6 +6,7 @@ from assertpy import assert_that
 from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition import AdmonitionConvert
 from obsidian_support.conversion.admonition_backquotes import AdmonitionBackquotesConvert
+from obsidian_support.conversion.excalidraw import ExcalidrawConvert
 from obsidian_support.conversion.image_link import ImageLinkConvert
 from obsidian_support.markdown_convert import markdown_convert
 
@@ -20,13 +21,15 @@ def test_callout_to_admonition(test):
 
 
 @pytest.mark.parametrize("test", ['basic'])
-def test_callout_to_admonition_backquotes( test):
+def test_callout_to_admonition_backquotes(test):
     assert_template("admonition_backquotes", test, AdmonitionBackquotesConvert())
 
 
-# @pytest.mark.parametrize("test", ['basic'])
-# def test_excalidraw_convert(test):
-#     assert_template("excalidraw", test, ExcalidrawConvert())
+@pytest.mark.skip
+@pytest.mark.parametrize("test", ['basic'])
+def test_excalidraw_convert(test):
+    assert_template("excalidraw", test, ExcalidrawConvert())
+
 
 @pytest.mark.parametrize("test", ['basic', 'size', 'caption', 'size_caption'])
 def test_wikilink_image_to_md_link_image(test):

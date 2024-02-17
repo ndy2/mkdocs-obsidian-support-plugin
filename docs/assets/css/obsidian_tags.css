@@ -4,3 +4,7 @@
   padding: 5px;
   font-weight: normal;
 }
+
+[data-md-color-scheme="slate"] .hash {
+  background-color: #292433;
+}

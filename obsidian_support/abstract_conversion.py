@@ -1,8 +1,8 @@
-import re
 from abc import *
-
 from typing import List
+
 from mkdocs.structure.pages import Page
+from overrides import final
 
 # a list of string that implies the syntax groups in regex
 SyntaxGroup = List[str]
@@ -20,9 +20,15 @@ Every conversion should extends this class
 
 class AbstractConversion(metaclass=ABCMeta):
 
-    def __init__(self, regex, regex_groups):
-        self.obsidian_regex_pattern = re.compile(regex, flags=re.VERBOSE)
-        self.obsidian_regex_groups = regex_groups
+    @property
+    @abstractmethod
+    def obsidian_regex_pattern(self):
+        pass
+
+    @property
+    @final
+    def obsidian_regex_groups(self):
+        return list(self.obsidian_regex_pattern.groupindex.keys())
 
     @abstractmethod
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:

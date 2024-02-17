@@ -1,10 +1,10 @@
 from mkdocs.plugins import BasePlugin
 
-from obsidian_support.conversion.admonition import AdmonitionConvert
-from obsidian_support.conversion.admonition_backquotes import AdmonitionBackquotesConvert
-from obsidian_support.conversion.excalidraw import ExcalidrawConvert
-from obsidian_support.conversion.image_link import ImageLinkConvert
-from obsidian_support.conversion.tags import TagsConvert
+from obsidian_support.conversion.admonition import AdmonitionConversion
+from obsidian_support.conversion.admonition_backquotes import AdmonitionBackquotesConversion
+from obsidian_support.conversion.excalidraw import ExcalidrawConversion
+from obsidian_support.conversion.image_link import ImageLinkConversion
+from obsidian_support.conversion.tags import TagsConversion
 from obsidian_support.markdown_convert import markdown_convert
 
 """
@@ -17,11 +17,10 @@ class ObsidianSupportPlugin(BasePlugin):
 
     def on_page_markdown(self, markdown, page, config, files):
         ## apply conversions
-
-        markdown = markdown_convert(markdown, page, AdmonitionConvert())
-        markdown = markdown_convert(markdown, page, AdmonitionBackquotesConvert())
-        markdown = markdown_convert(markdown, page, ExcalidrawConvert())
-        markdown = markdown_convert(markdown, page, ImageLinkConvert())
-        markdown = markdown_convert(markdown, page, TagsConvert())
+        markdown = markdown_convert(markdown, page, AdmonitionConversion())
+        markdown = markdown_convert(markdown, page, AdmonitionBackquotesConversion())
+        # markdown = markdown_convert(markdown, page, ExcalidrawConversion())
+        markdown = markdown_convert(markdown, page, ImageLinkConversion())
+        markdown = markdown_convert(markdown, page, TagsConversion())
 
         return markdown

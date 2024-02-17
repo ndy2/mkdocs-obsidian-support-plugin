@@ -1,5 +1,6 @@
 mkdocs~=1.4.2
 setuptools==67.3.3
 
-pytest
-assertpy
+pytest~=8.0.1
+assertpy~=1.1
+overrides~=7.7.0

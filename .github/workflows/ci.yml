@@ -51,7 +51,11 @@ jobs:
       # publish it to pypi
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
 
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
       # deploy github pages
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox

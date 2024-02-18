@@ -1,11 +1,14 @@
 ---
 title: Image-Link
 ---
- 
+
 > [!note]  feature - image-link
 > convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
 
-obsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links) with [embbe an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) which is also known as `internal link`. However markdown and mkdocs-material does not support `wikilink`. It uses traditional [`markdown links`](https://squidfunk.github.io/mkdocs-material/reference/images/).
+obsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links)
+with [embbe an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note)
+which is also known as `internal link`. However markdown and mkdocs-material does not support `wikilink`. It uses
+traditional [`markdown links`](https://squidfunk.github.io/mkdocs-material/reference/images/).
 
 ```text
 wikilink :  ![[images/hello.png]] 
@@ -13,6 +16,8 @@ mdlink   :  [images/hello.png](images/hello.png)
 ```
 
 ## Features
+
+**Internal Links**
 
 | type           | wikilink                           | converted link                          |
 | -------------- | ---------------------------------- | --------------------------------------- |
@@ -22,6 +27,14 @@ mdlink   :  [images/hello.png](images/hello.png)
 | caption        | `![[hello.png|caption]]`           | see below content tab                    |
 | size & caption | `![[im/hello.png|my-caption|200]]` | see below content tab                    |
 
+**Web Links**
+
+| type           | wikilink                                | converted link                       |
+|----------------|-----------------------------------------|--------------------------------------|
+| basic          | `![](https://path.to.image.png)`        | see below demo                  |
+| size           | `![100x100](https://path.to.image.png)` | see below demo                |
+| caption        | `![caption](https://path.to.image.png)` | see below demo                |
+| size & caption | `![caption| 100x100](https://path.to.image.png)` | see below demo        |
 
 #### converted links in `md_in_html` form
 
@@ -52,8 +65,9 @@ mdlink   :  [images/hello.png](images/hello.png)
 	</figure markdown>
 	```
 
-
 ### Demo
+
+**Internal Links**
 
 > [!tip]
 > Compare this page with it's original markdown. See the top right link
@@ -69,3 +83,21 @@ mdlink   :  [images/hello.png](images/hello.png)
 - `![[hello.png|hello-caption|200x200]]`
 
 ![[hello.png|hello-caption|200x200]]
+
+**Web Links**
+
+- `![](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
+![](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+
+- `![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
+![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+
+- `![100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
+![100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+
+- `![Engelbart|100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+
+![Engelbart|100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)

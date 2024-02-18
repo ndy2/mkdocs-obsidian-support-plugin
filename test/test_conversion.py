@@ -8,6 +8,7 @@ from obsidian_support.conversion.admonition import AdmonitionConversion
 from obsidian_support.conversion.admonition_backquotes import AdmonitionBackquotesConversion
 from obsidian_support.conversion.excalidraw import ExcalidrawConversion
 from obsidian_support.conversion.image_link import ImageLinkConversion
+from obsidian_support.conversion.image_web_link import ImageWebLinkConversion
 from obsidian_support.conversion.tags import TagsConversion
 from obsidian_support.markdown_convert import markdown_convert
 
@@ -35,6 +36,11 @@ def test_excalidraw_convert(test):
 @pytest.mark.parametrize("test", ['basic', 'size', 'caption', 'size_caption'])
 def test_wikilink_image_to_md_link_image(test):
     assert_template("image_link", test, ImageLinkConversion())
+
+
+@pytest.mark.parametrize("test", ['basic'])
+def test_image_web_link_conversion(test):
+    assert_template("image_web_link", test, ImageWebLinkConversion())
 
 
 @pytest.mark.parametrize("test", ['basic'])

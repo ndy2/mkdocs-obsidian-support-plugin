@@ -1,7 +1,10 @@
-> [!warn]
-> the regex does not matches if no new line detected
-> as in this edge case
-> it won't be converted
+
+!!! note
+
+    the regex matches for start of string
+    as in this edge case
+    it will be converted
+    with a new line in the beginning
 
 2. callout with no lines and title
 !!! info

@@ -7,8 +7,12 @@ from overrides import override
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
-a strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
+A strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
 to [mkdocs-material images](https://squidfunk.github.io/mkdocs-material/reference/images/) in markdown link
+
+Examples:
+given : `![[hello.png]]` 
+converted : `![hello.png](hello.png)`
 """
 
 

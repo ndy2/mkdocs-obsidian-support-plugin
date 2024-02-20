@@ -6,8 +6,27 @@ from overrides import override
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
-a strategy that convert [obsidian block-styled admonition](https://github.com/javalent/admonitions)
+A strategy that convert [obsidian block-styled admonition](https://github.com/javalent/admonitions)
 to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+
+Examples:
+given : 
+```
+```ad-tip
+Line 1: This is the content of the admonition tip.
+Line 2: This is the content of the admonition tip.
+Line 3: This is the content of the admonition tip.
+```
+```
+
+converted :
+```
+!!! tip
+
+    Line 1: This is the content of the admonition tip.
+    Line 2: This is the content of the admonition tip.
+    Line 3: This is the content of the admonition tip.
+```
 """
 
 

@@ -6,8 +6,22 @@ from overrides import override
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
-a strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
+A strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
 to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+
+Examples:
+given : 
+```
+> [!note]
+> some note!
+```
+
+converted :
+```
+! note
+
+    some note!
+```
 """
 
 

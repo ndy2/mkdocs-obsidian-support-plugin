@@ -105,32 +105,14 @@ common types that `obsidian callout`, `mkdocs-material admonition` and even `Git
 
 ## Implementation details and Warning
 
-It extracts obsidian call out from markdown using below regular expression 
-
-```
-\n ?> ?\\[!(?P<type>[a-z]+)\\](?P<title> .*)?(?P<lines>(\n ?>.*)*)
-```
-
-and create admonition using the groups (`type`, `title`, `lines`) of the match results.
-
-Implementation code at [here](https://github.com/ndy2/mkdocs-obsidian-support-plugin/blob/main/obsidian_support/conversion/admonition.py)
-
-As you might noticed that actual obsidian callout has more flexible rendering condition than above regex.  It allows some more spaces and so on.
-
-For implementation convenience, above regex allows zero or one space before and after `>`'character. And it begins with a new line character `\n`. So, in case of your markdown begins with call out, it does not work as expected.
-
- > [!warning] implementation limitation
-> 1. `type` must be written in lowercase : `info` , ~~`Info`~~
->    
-> 2. It does not work if your markdown starts with the `callout` it self.  add dummy new link at the beginning of your markdown will fix it.
->    
-> 3. Nested callout or admonition is not suppoerted
+> [!warning] implementation limitation
+> 1. Nested callout or admonition is not suppoerted
 > 
-> 4. Unlike actual obsidian callout, It requires more precise syntax. <br>
+> 2. Unlike actual obsidian callout, It requires more precise syntax. <br>
 >    there sholud be only zero or one space before and after first  `>` character <br>
 >    and no space before the rest of `>` characters and one space after it.
->    
->    recommended format is as below
+> 
+>   recommended format is as below
 > ```text
 > > [!info]
 > > copy me 

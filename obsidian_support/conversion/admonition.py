@@ -17,11 +17,11 @@ class AdmonitionConversion(AbstractConversion):
     def obsidian_regex_pattern(self):
         # OBSIDIAN_CALL_OUT_REGEX
         return re.compile(r"""
-        \n[ ]?>[ ]?                # callout must starts with `\n` and `>`
-        \[!(?P<type>[a-z]+)]       # callout type
+        (?:^|[\r\n])[ ]?>[ ]?      # callout must starts with `\n` or in the beginning of markdown
+        \[!(?P<type>[A-Za-z]+)]    # callout type
         (?P<collapse>\+|-?)        # callout collapse (optional) - add `+` or `-` to make foldable callout 
         (?P<title>[ ].*)?          # callout title (optional)
-        (?P<contents>(\n[ ]?>.*)*) # callout contents
+        (?P<contents>(\n[ ]?>.*)*)? # callout contents
         """, flags=re.VERBOSE)
 
     @override

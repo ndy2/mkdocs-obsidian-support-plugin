@@ -7,7 +7,7 @@ from obsidian_support.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition import AdmonitionConversion
 from obsidian_support.conversion.admonition_backquotes import AdmonitionBackquotesConversion
 from obsidian_support.conversion.excalidraw import ExcalidrawConversion
-from obsidian_support.conversion.image_link import ImageLinkConversion
+from obsidian_support.conversion.image_internal_link import ImageInternalLinkConversion
 from obsidian_support.conversion.image_web_link import ImageWebLinkConversion
 from obsidian_support.conversion.tags import TagsConversion
 from obsidian_support.markdown_convert import markdown_convert
@@ -18,24 +18,24 @@ unit tests for `obsidian syntax` to `mkdocs-material syntax` conversion
 
 
 @pytest.mark.parametrize("test", ['indent', 'complex', 'edgecase', 'collapsible'])
-def test_callout_to_admonition(test):
+def test_admonition_conversion(test):
     assert_template("admonition", test, AdmonitionConversion())
 
 
 @pytest.mark.parametrize("test", ['basic'])
-def test_callout_to_admonition_backquotes(test):
+def test_admonition_backquotes_conversion(test):
     assert_template("admonition_backquotes", test, AdmonitionBackquotesConversion())
 
 
 @pytest.mark.skip
 @pytest.mark.parametrize("test", ['basic'])
-def test_excalidraw_convert(test):
+def test_excalidraw_conversion(test):
     assert_template("excalidraw", test, ExcalidrawConversion())
 
 
 @pytest.mark.parametrize("test", ['basic', 'size', 'caption', 'size_caption'])
-def test_wikilink_image_to_md_link_image(test):
-    assert_template("image_link", test, ImageLinkConversion())
+def test_image_internal_link_conversion(test):
+    assert_template("image_internal_link", test, ImageInternalLinkConversion())
 
 
 @pytest.mark.parametrize("test", ['basic'])

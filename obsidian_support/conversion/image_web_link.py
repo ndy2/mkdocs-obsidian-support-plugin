@@ -6,8 +6,15 @@ from overrides import override
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
-a strategy that convert [markdown image web link](https://www.w3schools.io/file/markdown-images/)
-to [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
+A strategy that convert [markdown image web link](https://www.w3schools.io/file/markdown-images/)
+to [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) (a.k.a. internal link) in wikilink
+
+Notes:
+The result of this conversion would be converted to the actual markdown link by the `ImageInternalLinkConversion` 
+
+Examples:
+given : `![Engelbart|100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
+converted : `![[https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg|Engelbart|100x100]]`
 """
 
 

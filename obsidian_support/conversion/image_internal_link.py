@@ -7,24 +7,28 @@ from overrides import override
 from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
-a strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
+A strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
 to [mkdocs-material images](https://squidfunk.github.io/mkdocs-material/reference/images/) in markdown link
+
+Examples:
+given : `![[hello.png]]` 
+converted : `![hello.png](hello.png)`
 """
 
 
-class ImageLinkConversion(AbstractConversion):
+class ImageInternalLinkConversion(AbstractConversion):
 
     @property
     @override
     def obsidian_regex_pattern(self):
-        # OBSIDIAN_IMAGE_LINK_REGEX
+        # OBSIDIAN_IMAGE_INTERNAL_LINK_REGEX
         return re.compile(r"!\[\[(?P<image_path>[^|^\]]+)(?P<tags>|.+)?]]")
 
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
-        return self._convert_image_link(*syntax_groups)
+        return self._convert_image_internal_link(*syntax_groups)
 
-    def _convert_image_link(self, image_path: str, tags: str) -> str:
+    def _convert_image_internal_link(self, image_path: str, tags: str) -> str:
         markdown_image_link = '![' + image_path + '](' + image_path + ')'
         if tags == "":
             return markdown_image_link

@@ -82,7 +82,7 @@ See [Demo](demo) for more examples
 
 ## 💡 Notes
 
-common types that `obsidian callout` and `mkdocs-material admonition` support are
+common types that `obsidian callout` and `mkdocs-material admonition` support are
 
 -   note
 -   abstract
@@ -96,6 +96,12 @@ common types that `obsidian callout` and `mkdocs-material admonition` suppor
 -   bug
 -   example
 -   quote
+
+common types that `obsidian callout`, `mkdocs-material admonition` and even `GitHub Docs alert` support are
+
+- note
+- tip
+- warning
 
 ## Implementation details and Warning
 

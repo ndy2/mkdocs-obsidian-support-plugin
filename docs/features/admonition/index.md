@@ -48,7 +48,7 @@ See [Demo](demo) for more examples
 
 
 
-## Foldable/Collsapsible
+## Foldable/Collapsible
 
 ###  obsidian callout
 

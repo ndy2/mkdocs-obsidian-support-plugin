@@ -1,8 +1,8 @@
 ---
-title: Admonition Blockquotes
+title: Admonition Backquotes
 ---
   
-> [!note]  feature - admonition blockquotes
+> [!note]  feature - admonition backquotes
 > convert `block-styled admonition` to `mkdocs-material admonition`
 > 
 > - block-styled admonition - [github>javalen>admonitions](https://github.com/javalent/admonitions)
@@ -11,7 +11,7 @@ title: Admonition Blockquotes
 >  Requires
 >  - obsidian plugin - admonition
 
-###  Admonition Blockquotes
+###  Admonition Backquotes
 
 === "obsidian markdown"
 

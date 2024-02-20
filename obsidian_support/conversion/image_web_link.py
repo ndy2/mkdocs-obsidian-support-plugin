@@ -7,7 +7,7 @@ from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 a strategy that convert [markdown image web link](https://www.w3schools.io/file/markdown-images/)
-to [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
+to [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) (a.k.a. internal link) in wikilink
 """
 
 

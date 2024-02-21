@@ -19,24 +19,24 @@ mdlink   :  [images/hello.png](images/hello.png)
 
 **Internal Links**
 
-| type           | wikilink                           | converted link                          |
-| -------------- | ---------------------------------- | --------------------------------------- |
-| basic          | `![[hello.png]]`                   | `![hello.png](hello.png)`               |
-| path           | `![[image/hello.png]]`             | `![images/hello.png](images/hello.png)` |
-| size           | `![[hello.png|200x300]]`           | see below content tab                    |
-| caption        | `![[hello.png|caption]]`           | see below content tab                    |
-| size & caption | `![[im/hello.png|my-caption|200]]` | see below content tab                    |
+| type           | wikilink               | converted link                          |
+|----------------|------------------------|-----------------------------------------|
+| basic          | `![[hello.png]]`       | `![hello.png](hello.png)`               |
+| path           | `![[image/hello.png]]` | `![images/hello.png](images/hello.png)` |
+| size           | `![[hello.png          | 200x300]]`                              | see below content tab                    |
+| caption        | `![[hello.png          | caption]]`                              | see below content tab                    |
+| size & caption | `![[im/hello.png       | my-caption                              |200]]` | see below content tab                    |
 
 **Web Links**
 
 | type           | wikilink                                | converted link                       |
 |----------------|-----------------------------------------|--------------------------------------|
-| basic          | `![](https://path.to.image.png)`        | see below demo                  |
-| size           | `![100x100](https://path.to.image.png)` | see below demo                |
-| caption        | `![caption](https://path.to.image.png)` | see below demo                |
-| size & caption | `![caption| 100x100](https://path.to.image.png)` | see below demo        |
+| basic          | `![](https://path.to.image.png)`        | see below demo                       |
+| size           | `![100x100](https://path.to.image.png)` | see below demo                       |
+| caption        | `![caption](https://path.to.image.png)` | see below demo                       |
+| size & caption | `![caption                              | 100x100](https://path.to.image.png)` | see below demo        |
 
-#### converted links in `md_in_html` form
+**Converted links in `md_in_html` form**
 
 === "custom size"
 
@@ -65,7 +65,7 @@ mdlink   :  [images/hello.png](images/hello.png)
 	</figure markdown>
 	```
 
-### Demo
+## Demo
 
 **Internal Links**
 
@@ -101,3 +101,9 @@ mdlink   :  [images/hello.png](images/hello.png)
 - `![Engelbart|100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
 
 ![Engelbart|100x100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+
+- `[![\PyPi](https://img.shields.io/pypi/v/mkdocs-obsidian-support-plugin)](https://pypi.org/project/mkdocs-obsidian-support-plugin/)`
+
+result (web link image with hyperlink) : [![\\](https://img.shields.io/pypi/v/mkdocs-obsidian-support-plugin)](https://pypi.org/project/mkdocs-obsidian-support-plugin/)
+
+You can escape web link conversion by adding `backslash - \` on prior to tag(replacement part)

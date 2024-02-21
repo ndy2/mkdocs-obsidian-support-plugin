@@ -53,7 +53,7 @@ jobs:
           skip-existing: true
 
   gh-pages:
-    name: Deploy Github PAges
+    name: Deploy Github Pages
     needs: release
     runs-on: ubuntu-latest
     permissions: write-all
@@ -67,7 +67,6 @@ jobs:
       # deploy github pages
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox
-      - run: pip3 install mkdocs-exclude
-      - run: pip install mkdocs-kroki-plugin
+      - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-obsidian-support-plugin
       - run: mkdocs gh-deploy --force

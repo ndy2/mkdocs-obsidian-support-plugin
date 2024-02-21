@@ -46,7 +46,7 @@ class ImageInternalLinkConversion(AbstractConversion):
             caption_tag = self.__get_caption_tag(caption_or_size, size_tag != "")
 
         return cleandoc(f"""
-                <figure markdown>
+                <figure markdown="span">
                   {markdown_image_link}{size_tag}
                   {caption_tag}
                 </figure markdown>

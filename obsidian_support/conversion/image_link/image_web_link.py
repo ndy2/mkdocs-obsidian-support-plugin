@@ -3,7 +3,7 @@ import re
 from mkdocs.structure.pages import Page
 from overrides import override
 
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
+from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 A strategy that convert [markdown image web link](https://www.w3schools.io/file/markdown-images/)
@@ -28,7 +28,7 @@ class ImageWebLinkConversion(AbstractConversion):
 
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
-        return self._convert_image_web_link(*syntax_groups)
+        return self._convert_image_link(*syntax_groups)
 
-    def _convert_image_web_link(self, tags: str, image_path: str) -> str:
+    def _convert_image_link(self, tags: str, image_path: str) -> str:
         return f"![[{image_path}|{tags}]]"

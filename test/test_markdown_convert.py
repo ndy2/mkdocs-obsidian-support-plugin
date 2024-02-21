@@ -1,6 +1,8 @@
+from typing import List
+
 from assertpy import assert_that
 
-from obsidian_support.markdown_code_extract import get_code_indices, EXCLUDE_RANGES
+from obsidian_support.markdown_convert import _get_excluded_indices
 
 
 def test_get_code_indices():
@@ -21,7 +23,7 @@ some tip
 ```"""
 
     # when
-    code_indices: EXCLUDE_RANGES = get_code_indices(markdown)
+    code_indices: List[tuple] = _get_excluded_indices(markdown)
 
     # then
     assert_that(code_indices).is_length(7)

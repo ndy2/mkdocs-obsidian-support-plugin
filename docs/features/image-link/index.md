@@ -1,7 +1,6 @@
 ---
 title: Image-Link
 ---
-
 > [!note]  feature - image-link
 > convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
 
@@ -36,7 +35,7 @@ mdlink   :  [images/hello.png](images/hello.png)
 | caption        | `![caption](https://path.to.image.png)` | see below demo                |
 | size & caption | `![caption| 100x100](https://path.to.image.png)` | see below demo        |
 
-#### converted links in `md_in_html` form
+**Converted links in `md_in_html` form**
 
 === "custom size"
 
@@ -65,7 +64,7 @@ mdlink   :  [images/hello.png](images/hello.png)
 	</figure markdown>
 	```
 
-### Demo
+## Demo
 
 **Internal Links**
 

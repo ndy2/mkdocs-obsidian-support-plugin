@@ -1,8 +1,7 @@
 ---
-title: Admonition
+title: Admonition Callout
 ---
-  
-> [!note]  feature - admonition
+> [!note]  feature - admonition callout
 > convert `obsidian callout` to `mkdocs-material admonition`
 > 
 > - [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
@@ -24,7 +23,7 @@ See [Demo](demo) for more examples
 
 === "obsidian rendered"
 
-     ![[images/1.png]]
+     ![[images/callout_1.png]]
 
 
 ### mkdocs-material admonition
@@ -61,7 +60,7 @@ See [Demo](demo) for more examples
 
 === "obsidian rendered"
 
-     ![[images/2.png]]
+     ![[images/callout_2.png]]
 
 ### mkdocs-material admonition
 

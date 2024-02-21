@@ -4,7 +4,7 @@ from inspect import cleandoc
 from mkdocs.structure.pages import Page
 from overrides import override
 
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
+from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 A strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
@@ -46,7 +46,7 @@ class ImageInternalLinkConversion(AbstractConversion):
             caption_tag = self.__get_caption_tag(caption_or_size, size_tag != "")
 
         return cleandoc(f"""
-                <figure markdown>
+                <figure markdown="span">
                   {markdown_image_link}{size_tag}
                   {caption_tag}
                 </figure markdown>

@@ -1,5 +1,4 @@
 from mkdocs.plugins import BasePlugin
-from overrides import overrides
 
 from obsidian_support.conversion.admonition.admonition_backquotes import AdmonitionBackquotesConversion
 from obsidian_support.conversion.admonition.admonition_callout import AdmonitionCalloutConversion
@@ -18,14 +17,17 @@ class ObsidianSupportPlugin(BasePlugin):
 
     def __init__(self):
         super().__init__()
-        self.admonition_conversions = AdmonitionCalloutConversion(), AdmonitionBackquotesConversion()
-        self.web_link_conversions = ImageWebLinkConversion(), ImageInternalLinkConversion()
+        self.admonition_callout_conversions = AdmonitionCalloutConversion()
+        self.admonition_backquotes_conversion = AdmonitionBackquotesConversion()
+        self.image_web_link_conversions = ImageWebLinkConversion()
+        self.image_internal_link_conversion = ImageInternalLinkConversion()
         self.tags_conversion = TagsConversion()
 
-    @overrides
     def on_page_markdown(self, markdown, page, config, files):
         # apply conversions
-        markdown = markdown_convert(markdown, page, *self.admonition_conversions)
-        markdown = markdown_convert(markdown, page, *self.web_link_conversions)
+        markdown = markdown_convert(markdown, page, self.admonition_callout_conversions)
+        markdown = markdown_convert(markdown, page, self.admonition_backquotes_conversion)
+        markdown = markdown_convert(markdown, page, self.image_web_link_conversions)
+        markdown = markdown_convert(markdown, page, self.image_internal_link_conversion)
         markdown = markdown_convert(markdown, page, self.tags_conversion)
         return markdown

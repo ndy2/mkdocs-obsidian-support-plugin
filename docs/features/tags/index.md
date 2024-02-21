@@ -1,7 +1,6 @@
 ---
 title: Tags
 ---
- 
 > [!note]  feature - tags
 > convert `obsidian tags` to `mkdocs-material search`
 >

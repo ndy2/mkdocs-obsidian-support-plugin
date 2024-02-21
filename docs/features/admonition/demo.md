@@ -49,13 +49,13 @@
 
 ```
 > [!note]
-> ![images/img.png](images/img.png)
+> ![images/book.png](images/book.png)
 ```
 
 - rendered
 
 > [!note]
-> ![images/img.png](images/img.png)
+> ![images/book.png](images/book.png)
 
 `5. with image (in Wiki link)`
 
@@ -63,13 +63,13 @@
 
 ```
 > [!note]
-> ![[images/img.png]]
+> ![[images/book.png]]
 ```
 
 - rendered
 
 > [!note]
-> ![[images/img.png]]
+> ![[images/book.png]]
 
 `6. with code block`
 
@@ -95,6 +95,7 @@
 `7. note with content tab` - might be imporved
 
 - markdown
+
 ```
 > [!note] code block with content tab and admonition
 > === "C"
@@ -121,7 +122,7 @@
 
 > [!note] code block with content tab and admonition
 > === "C"
-> 
+>
 >     ``` c
 >     #include <stdio.h>
 >     
@@ -130,9 +131,9 @@
 >         return 0;
 >     }
 >     ```
->    
+>
 > === "kotlin"
-> 
+>
 >     ``` kotlin
 >     fun main(){
 >         println("Hello world!")
@@ -162,17 +163,17 @@
 
 - rendered
 
- > [!example]
+> [!example]
 > === "Unordered List"
-> 
+>
 >     ``` markdown
 >     * Sed sagittis eleifend rutrum
 >     * Donec vitae suscipic est
 >     * Nulla tempor lobortis orci
 >     ```
->    
+>
 > === "Ordered List"
-> 
+>
 >     ``` markdown
 >     1. Sed sagittis eleifend rutrum
 >     2. Donec vitae suscipic est

@@ -41,9 +41,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
 
-  # footnotes
-  - footnotes
-
   # general
   - toc:
       permalink: true
@@ -52,12 +49,7 @@ plugins:
   - glightbox
   - search
   - obsidian-support
-  - exclude:
-        glob:
-            - "*/excalidraw/*.md"
-            - "*/*.excalidraw.md"
-  - kroki:
-        FencePrefix: 'kroki-'
+  - awesome-pages
 
 extra_css:
   - assets/css/obsidian_tags.css

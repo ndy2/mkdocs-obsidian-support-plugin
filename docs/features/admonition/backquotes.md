@@ -1,7 +1,6 @@
 ---
 title: Admonition Backquotes
 ---
-  
 > [!note]  feature - admonition backquotes
 > convert `block-styled admonition` to `mkdocs-material admonition`
 > 
@@ -22,7 +21,7 @@ title: Admonition Backquotes
 
 === "obsidian rendered"
 
-     ![[images/1.png]]
+     ![[images/backquotes_1.png]]
 
 ### mkdocs-material admonition
 

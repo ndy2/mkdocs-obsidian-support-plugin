@@ -6,7 +6,8 @@ Plugin for [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) to co
 from [obsidian](https://obsidian.md/) to mkdocs-material.
 
 [![\PyPI](https://img.shields.io/pypi/v/mkdocs-obsidian-support-plugin)](https://pypi.org/project/mkdocs-obsidian-support-plugin/)
-[![\GitHub](https://img.shields.io/github/license/ndy2/mkdocs-obsidian-support-plugin)](https://github.com/ndy2/mkdocs-obsidian-support-plugin/blob/main/LICENSE.md)
+[![\PyPi Downloads](https://img.shields.io/pypi/dm/mkdocs-obsidian-support-plugin.svg)](https://pypi.org/project/mkdocs-obsidian-support-plugin/)
+[![\GitHub](https://img.shields.io/github/license/ndy2/mkdocs-obsidian-support-plugin)](https://github.com/ndy2/mkdocs-obsidian-support-plugin/blob/main/LICENSE)
 
 ```text
 pip install mkdocs-obsidian-support-plugin

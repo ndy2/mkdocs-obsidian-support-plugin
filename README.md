@@ -32,7 +32,7 @@ plugins:
 
 ## github-pages
 
-> [!info]
+> [!tip]
 >
 > See https://ndy2.github.io/mkdocs-obsidian-support-plugin/ for more details
 

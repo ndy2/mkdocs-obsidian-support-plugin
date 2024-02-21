@@ -4,3 +4,4 @@ dist
 venv
 .idea
 docs/.obsidian
+.obsidian

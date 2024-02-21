@@ -6,8 +6,22 @@ from overrides import override
 from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
-a strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
+A strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
 to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+
+Examples:
+given : 
+```
+> [!note]
+> some note!
+```
+
+converted :
+```
+! note
+
+    some note!
+```
 """
 
 
@@ -17,11 +31,11 @@ class AdmonitionCalloutConversion(AbstractConversion):
     def obsidian_regex_pattern(self):
         # OBSIDIAN_CALL_OUT_REGEX
         return re.compile(r"""
-        \n[ ]?>[ ]?                # callout must starts with `\n` and `>`
-        \[!(?P<type>[a-z]+)]       # callout type
+        (?:^|[\r\n])[ ]?>[ ]?      # callout must starts with `\n` or in the beginning of markdown
+        \[!(?P<type>[A-Za-z]+)]    # callout type
         (?P<collapse>\+|-?)        # callout collapse (optional) - add `+` or `-` to make foldable callout 
         (?P<title>[ ].*)?          # callout title (optional)
-        (?P<contents>(\n[ ]?>.*)*) # callout contents
+        (?P<contents>(\n[ ]?>.*)*)? # callout contents
         """, flags=re.VERBOSE)
 
     @override

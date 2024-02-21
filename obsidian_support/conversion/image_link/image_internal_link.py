@@ -4,7 +4,7 @@ from inspect import cleandoc
 from mkdocs.structure.pages import Page
 from overrides import override
 
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
+from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 a strategy that convert [obsidian embedding files#image](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note) in wikilink
@@ -12,12 +12,12 @@ to [mkdocs-material images](https://squidfunk.github.io/mkdocs-material/referenc
 """
 
 
-class ImageLinkConversion(AbstractConversion):
+class ImageInternalLinkConversion(AbstractConversion):
 
     @property
     @override
     def obsidian_regex_pattern(self):
-        # OBSIDIAN_IMAGE_LINK_REGEX
+        # OBSIDIAN_IMAGE_INTERNAL_LINK_REGEX
         return re.compile(r"!\[\[(?P<image_path>[^|^\]]+)(?P<tags>|.+)?]]")
 
     @override

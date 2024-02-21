@@ -3,7 +3,7 @@ import re
 from mkdocs.structure.pages import Page
 from overrides import override
 
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
+from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 a strategy that convert [obsidian block-styled admonition](https://github.com/javalent/admonitions)

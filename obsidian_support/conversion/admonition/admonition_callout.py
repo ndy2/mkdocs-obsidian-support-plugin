@@ -3,7 +3,7 @@ import re
 from mkdocs.structure.pages import Page
 from overrides import override
 
-from obsidian_support.abstract_conversion import AbstractConversion, SyntaxGroup
+from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 """
 a strategy that convert [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
@@ -11,7 +11,7 @@ to [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/refe
 """
 
 
-class AdmonitionConversion(AbstractConversion):
+class AdmonitionCalloutConversion(AbstractConversion):
     @property
     @override
     def obsidian_regex_pattern(self):

@@ -24,7 +24,7 @@ class ImageWebLinkConversion(AbstractConversion):
     @override
     def obsidian_regex_pattern(self):
         # OBSIDIAN_IMAGE_WEB_LINK_REGEX
-        return re.compile(r"!\[(?P<tags>.*)]\((?P<image_path>https?://.*)\)")
+        return re.compile(r"!\[(?P<tags>(?!\\).*)]\((?P<image_path>https?://.*)\)")
 
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:

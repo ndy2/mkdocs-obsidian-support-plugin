@@ -38,7 +38,7 @@ def test_image_internal_link_conversion(test):
     assert_template("image_link/image_internal_link", test, ImageInternalLinkConversion())
 
 
-@pytest.mark.parametrize("test", ['basic'])
+@pytest.mark.parametrize("test", ['basic', 'escape'])
 def test_image_web_link_conversion(test):
     assert_template("image_link/image_web_link", test, ImageWebLinkConversion())
 

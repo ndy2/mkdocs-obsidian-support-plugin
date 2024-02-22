@@ -24,8 +24,8 @@ plugins:
 
 ## features
 
-- `obsidian callout` -> `mkdocs-material admonition`
-- `obsidian block styled callout` -> `mkdocs-material admonition`
+- `obsidian callout/block styled admonition` -> `mkdocs-material admonition`
+- `obsidian comment` -> `html comment`
 - `obsidian wikilink image` -> `mkdocs-material mdlink image` & `image with md_in_html`
 - `obsidian tags` -> `mkdocs-material search`
 

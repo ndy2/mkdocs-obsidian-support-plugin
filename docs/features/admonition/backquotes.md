@@ -14,13 +14,13 @@ title: Admonition Backquotes
 
 === "obsidian markdown"
 
-````
+~~~
 ```ad-tip
 title: This is a tip
 
 This is the content of the admonition tip.
 ```
-````
+~~~
 
 === "obsidian rendered"
 

@@ -14,27 +14,32 @@ title: Admonition Backquotes
 
 === "obsidian markdown"
 
-    ```ad-tip
-    title: This is a tip
-    This is the content of the admonition tip.
-    ```
+````
+```ad-tip
+title: This is a tip
+
+This is the content of the admonition tip.
+```
+````
 
 === "obsidian rendered"
 
-     ![[images/backquotes_1.png]]
+![[images/backquotes_1.png]]
 
 ### mkdocs-material admonition
 
 === "mkdocs-material markdown"
 
-    ```
-    !!!tip "This is a tip"
-    
-        This is the content of the admonition tip.
-    ```
+```
+!!!tip "This is a tip"
+
+    This is the content of the admonition tip.
+```
 
 === "mkdocs-material rendered"
 
-    !!!tip "This is a tip"
-    
-        This is the content of the admonition tip.
+```ad-tip
+title: This is a tip
+
+This is the content of the admonition tip.
+```

@@ -2,7 +2,7 @@
 title: Tags
 ---
 > [!note]  feature - tags
-> convert `obsidian tags` to `mkdocs-material search`
+> Convert `obsidian tags` to `mkdocs-material search`
 >
 > - [obsidian tags](https://help.obsidian.md/Editing+and+formatting/Tags)
 > - [mkdocs-material search](https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/)
@@ -17,7 +17,7 @@ title: Tags
 
 === "mkdocs-material rendered"
 
-    This is just an **obsidian**{: .hash} tag. Click to go to the search bar
+    This is just an #obsidian tag. Click to go to the search bar
 
 ## How to activate
 

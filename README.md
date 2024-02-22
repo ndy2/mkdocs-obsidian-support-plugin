@@ -23,6 +23,7 @@ plugins:
 ## features
 
 - `obsidian callout/block styled admonition` -> `mkdocs-material admonition`
+- `obsidian comment` -> `html comment`
 - `obsidian wikilink image` -> `mkdocs-material mdlink image` & `image with md_in_html`
 - `obsidian tags` -> `mkdocs-material search`
 
@@ -41,3 +42,6 @@ plugins:
 
 - https://github.com/sondregronas/mkdocs-callouts
 - https://github.com/orbikm/mkdocs-ezlinks-plugin
+
+
+This is an %%inline%% comment.

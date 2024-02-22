@@ -20,23 +20,37 @@ fun main() {
 ### Tip
 ```ad-tip
 some tip
-```"""
+```
+
+### Tilde
+~~~markdown
+some tip
+~~~
+
+### Nested
+~~~markdown
+```kotlin
+fun main() {
+    println("Hello world!")
+}
+```
+some tip
+`some code`
+~~~"""
 
     # when
     code_indices: List[tuple] = _get_excluded_indices(markdown)
 
     # then
-    assert_that(code_indices).is_length(7)
+    assert_that(code_indices).is_length(5)
 
-    # ## Hi there.
-    assert_that(code_indices[0]).is_equal_to((26, 31))  # indices of `code`
+    # tilde_code_block_indices
+    assert_that(code_indices[0]).is_equal_to((145, 168))  # indices of `~~~markdown\n somde tip\n~~~`
+    assert_that(code_indices[1]).is_equal_to((182, 274))  # indices of `~~~markdown\n ```kotlin\n ... ~~~`
 
-    # ## Kotlin
-    assert_that(code_indices[1]).is_equal_to((45, 46))  # indices of ``
-    assert_that(code_indices[2]).is_equal_to((47, 98))  # indices of `kotlin\n    fun ...`
-    assert_that(code_indices[3]).is_equal_to((99, 100))  # indices of ``
+    # backtick_code_block_indices
+    assert_that(code_indices[2]).is_equal_to((45, 100))  # indices of ````kotlin\n    fun ...````
+    assert_that(code_indices[3]).is_equal_to((111, 132))  # indices of ````ad-tip\nsomde tip\n````
 
-    # ## Tip
-    assert_that(code_indices[4]).is_equal_to((111, 112))  # indices of ``
-    assert_that(code_indices[5]).is_equal_to((113, 130))  # indices of `ad-tip\n    some tip`
-    assert_that(code_indices[6]).is_equal_to((131, 132))  # indices of ``
+    # backtick_code_indices
+    assert_that(code_indices[4]).is_equal_to((26, 31))  # indices of ``code``

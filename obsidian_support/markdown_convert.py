@@ -21,7 +21,7 @@ def markdown_convert(markdown: str, page: Page, conversion: AbstractConversion) 
         end = obsidian_syntax.end() - 1
 
         ## continue if match is in excluded range
-        if _is_excluded(start, end, excluded_indices):
+        if _is_overlapped(start, end, excluded_indices):
             continue
 
         syntax_groups = list(map(lambda group: obsidian_syntax.group(group), conversion.obsidian_regex_groups))
@@ -36,16 +36,30 @@ def markdown_convert(markdown: str, page: Page, conversion: AbstractConversion) 
 
 
 def _get_excluded_indices(markdown: str) -> List[tuple]:
-    indices = []
-    """ regex that matches markdown `code block` (triple backtick syntax) and code(single backtick syntax) """
-    MARKDOWN_CODE_REGEX = r"`[\S\s]*?`"
+    """ regex that matches markdown `tilde code block` (triple tilde syntax) """
+    MARKDOWN_TILDE_CODE_BLOCK_REGEX = r"([A-Za-z \t]*)~~~([-A-Za-z]*)?\n([\s\S]*?)~~~([A-Za-z \t]*)*"
+    tilde_code_block_indices = []
+    for code in re.finditer(MARKDOWN_TILDE_CODE_BLOCK_REGEX, markdown):
+        tilde_code_block_indices.append((code.start(), code.end() - 1))
 
-    for code in re.finditer(MARKDOWN_CODE_REGEX, markdown):
-        indices.append((code.start(), code.end() - 1))
-    return indices
+    """ regex that matches markdown `backtick code block` (triple backtick syntax)"""
+    MARKDOWN_BACKTICK_CODE_BLOCK_REGEX = r"([A-Za-z \t]*)```([-A-Za-z]*)?\n([\s\S]*?)```([A-Za-z \t]*)*"
+    backtick_code_block_indices = []
+    for code in re.finditer(MARKDOWN_BACKTICK_CODE_BLOCK_REGEX, markdown):
+        if not _is_overlapped(code.start(), code.end() - 1, tilde_code_block_indices):
+            backtick_code_block_indices.append((code.start(), code.end() - 1))
+
+    """ regex that matches markdown code (single backtick syntax) """
+    MARKDOWN_BACKTICK_CODE_REGEX = r"`[\S\s]*?`"
+    backtick_code_indices = []
+    for code in re.finditer(MARKDOWN_BACKTICK_CODE_REGEX, markdown):
+        if not _is_overlapped(code.start(), code.end() - 1, tilde_code_block_indices) and \
+                not _is_overlapped(code.start(), code.end() - 1, backtick_code_block_indices):
+            backtick_code_indices.append((code.start(), code.end() - 1))
+    return tilde_code_block_indices + backtick_code_block_indices + backtick_code_indices
 
 
-def _is_excluded(start: int, end: int, exclude_indices_pairs: List[tuple]) -> bool:
+def _is_overlapped(start: int, end: int, exclude_indices_pairs: List[tuple]) -> bool:
     for exclude_indices_pair in exclude_indices_pairs:
         if exclude_indices_pair[0] <= start and end <= exclude_indices_pair[1]:
             return True

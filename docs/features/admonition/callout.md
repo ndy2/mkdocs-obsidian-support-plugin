@@ -2,7 +2,7 @@
 title: Admonition Callout
 ---
 > [!note]  feature - admonition callout
-> convert `obsidian callout` to `mkdocs-material admonition`
+> Convert `obsidian callout` to `mkdocs-material admonition`
 > 
 > - [obsidian callout](https://help.obsidian.md/Editing+and+formatting/Callouts)
 > - [mkdocs-material admonition](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
@@ -14,36 +14,35 @@ See [Demo](demo) for more examples
 
 === "obsidian markdown"
 
-    ```
-    > [!note] haha
-    > I am obsidian callout!
-    > 
-    > I became mkdocs admonition!
-    ```
+```
+> [!note] haha
+> I am obsidian callout!
+> 
+> I became mkdocs admonition!
+```
 
 === "obsidian rendered"
 
-     ![[images/callout_1.png]]
+![[images/callout_1.png]]
 
 
 ### mkdocs-material admonition
 
 === "mkdocs-material markdown"
 
-    ```
-    !!!note "haha"
-    
-        I am obsidian callout!
-        I became mkdocs admonition!
-    ```
+```
+!!!note "haha"
+
+    I am obsidian callout!
+    I became mkdocs admonition!
+```
 
 === "mkdocs-material rendered"
 
-    !!!note "haha"
-    
-        I am obsidian callout!
-        
-        I became mkdocs admonition!
+> [!note] haha
+> I am obsidian callout!
+> 
+> I became mkdocs admonition!
 
 
 
@@ -53,30 +52,28 @@ See [Demo](demo) for more examples
 
 === "obsidian markdown"
 
-    ```
-    > [!faq]- Are callouts foldable? 
-    > Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
-    ```
+```
+> [!faq]- Are callouts foldable? 
+> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
+```
 
 === "obsidian rendered"
 
-     ![[images/callout_2.png]]
+![[images/callout_2.png]]
 
 ### mkdocs-material admonition
 
 === "mkdocs-material markdown"
 
-    ```
-    ??? note "Are callouts foldable?"
-    
-        Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
-    ```
+```
+??? faq "Are callouts foldable?"
+    Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
+```
 
 === "mkdocs-material rendered"
 
-    ??? note "Are callouts foldable?"
-    
-        Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
+> [!faq]- Are callouts foldable? 
+> Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
 
 
 ## 💡 Notes

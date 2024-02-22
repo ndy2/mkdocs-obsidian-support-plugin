@@ -3,7 +3,7 @@ title: Image-Link
 ---
 
 > [!note]  feature - image-link
-> convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
+> Convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
 
 obsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links)
 with [embbe an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note)

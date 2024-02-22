@@ -6,7 +6,7 @@ from assertpy import assert_that
 from obsidian_support.conversion.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition.admonition_backquotes import AdmonitionBackquotesConversion
 from obsidian_support.conversion.admonition.admonition_callout import AdmonitionCalloutConversion
-from obsidian_support.conversion.excalidraw.excalidraw import ExcalidrawConversion
+from obsidian_support.conversion.comment.comment import CommentConversion
 from obsidian_support.conversion.image_link.image_internal_link import ImageInternalLinkConversion
 from obsidian_support.conversion.image_link.image_web_link import ImageWebLinkConversion
 from obsidian_support.conversion.tags.tags import TagsConversion
@@ -27,12 +27,6 @@ def test_admonition_backquotes_conversion(test):
     assert_template("admonition/admonition_backquotes", test, AdmonitionBackquotesConversion())
 
 
-@pytest.mark.skip
-@pytest.mark.parametrize("test", ['basic'])
-def test_excalidraw_conversion(test):
-    assert_template("excalidraw", test, ExcalidrawConversion())
-
-
 @pytest.mark.parametrize("test", ['basic', 'size', 'caption', 'size_caption'])
 def test_image_internal_link_conversion(test):
     assert_template("image_link/image_internal_link", test, ImageInternalLinkConversion())
@@ -46,6 +40,11 @@ def test_image_web_link_conversion(test):
 @pytest.mark.parametrize("test", ['basic'])
 def test_tag_conversion(test):
     assert_template("tags", test, TagsConversion())
+
+
+@pytest.mark.parametrize("test", ['basic'])
+def test_comment_conversion(test):
+    assert_template("comment", test, CommentConversion())
 
 
 def assert_template(conversion_name: str, test: str, conversion: AbstractConversion):

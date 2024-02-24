@@ -2,6 +2,9 @@ from contextlib import ExitStack
 
 import pytest
 from assertpy import assert_that
+from mkdocs.config.defaults import MkDocsConfig
+from mkdocs.structure.files import File
+from mkdocs.structure.pages import Page
 
 from obsidian_support.conversion.abstract_conversion import AbstractConversion
 from obsidian_support.conversion.admonition.admonition_backquotes import AdmonitionBackquotesConversion
@@ -60,8 +63,15 @@ def assert_template(conversion_name: str, test: str, conversion: AbstractConvers
         given = src.read()
         expected = dest.read()
 
+        file = File(path="path", src_dir="src_dir", dest_dir="dest_dir", use_directory_urls=False)
+        config = MkDocsConfig()
+        config.site_name = "mkdocs-obsidian-support-plugin"
+        config.site_url = "https://ndy2.github.io"
+        config.site_dir = "mkdocs-obsidian-support-plugin"
+        page = Page(title="test_page", file=file, config=config)
+
         # when
-        actual = markdown_convert(given, None, conversion)
+        actual = markdown_convert(given, page, conversion)
 
         # then
         assert_that(expected).is_equal_to(actual)

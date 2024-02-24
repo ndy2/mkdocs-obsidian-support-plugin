@@ -1,7 +1,6 @@
 ---
 title: Image-Link
 ---
-
 > [!note]  feature - image-link
 > Convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
 
@@ -19,13 +18,13 @@ mdlink   :  [images/hello.png](images/hello.png)
 
 **Internal Links**
 
-| type           | wikilink               | converted link                          |
-|----------------|------------------------|-----------------------------------------|
-| basic          | `![[hello.png]]`       | `![hello.png](hello.png)`               |
-| path           | `![[image/hello.png]]` | `![images/hello.png](images/hello.png)` |
-| size           | `![[hello.png          | 200x300]]`                              | see below content tab                    |
-| caption        | `![[hello.png          | caption]]`                              | see below content tab                    |
-| size & caption | `![[im/hello.png       | my-caption                              |200]]` | see below content tab                    |
+| type           | wikilink               | converted link                          |                       |                       |
+| -------------- | ---------------------- | --------------------------------------- | --------------------- | --------------------- |
+| basic          | `![[hello.png]]`       | `![hello.png](hello.png)`               |                       |                       |
+| path           | `![[image/hello.png]]` | `![images/hello.png](images/hello.png)` |                       |                       |
+| size           | `![[hello.png          | 200x300]]`                              | see below content tab |                       |
+| caption        | `![[hello.png          | caption]]`                              | see below content tab |                       |
+| size & caption | `![[im/hello.png       | my-caption                              | 200]]`                | see below content tab |
 
 **Web Links**
 

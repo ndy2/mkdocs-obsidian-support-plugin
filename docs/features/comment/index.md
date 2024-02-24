@@ -8,26 +8,44 @@ title: Comment
 > - [obsidian comments](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax#Comments)
 > - [HTML Comment Tag](https://www.w3schools.com/tags/tag_comment.asp)
 
-## Inline Comment
+## Usage
+
+### obsidian comment
 
 === "obsidian markdown"
 
-    ```
-    This is an %%inline%% comment.
-    ```
+```
+This is an %%inline%% comment.
+
+%% 
+This is a block comment. 
+Block comments can span multiple lines. 
+%%
+```
 
 === "obsidian reading view"
 
-     ![[images/comment_1.png]]
+![[images/comment_1.png]]
 
-### mkdocs-material admonition
+### mkdocs-material comment
 
 === "mkdocs-material markdown"
 
-    ```
-    This is an <!--inline--> comment.
-    ```
+```
+This is an <!--inline--> comment.
+
+<!--
+This is a block comment. 
+Block comments can span multiple lines. 
+-->
+```
 
 === "mkdocs-material rendered"
 
-    This is an %%inline%% comment.
+This is an %%inline%% comment.
+
+%% 
+This is a block comment. 
+Block comments can span multiple lines. 
+%%
+

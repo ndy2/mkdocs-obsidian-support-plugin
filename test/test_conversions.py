@@ -9,6 +9,7 @@ from obsidian_support.conversion.admonition.admonition_callout import Admonition
 from obsidian_support.conversion.comment.comment import CommentConversion
 from obsidian_support.conversion.image_link.image_internal_link import ImageInternalLinkConversion
 from obsidian_support.conversion.image_link.image_web_link import ImageWebLinkConversion
+from obsidian_support.conversion.pdf.pdf import PdfConversion
 from obsidian_support.conversion.tags.tags import TagsConversion
 from obsidian_support.markdown_convert import markdown_convert
 
@@ -35,6 +36,11 @@ def test_image_internal_link_conversion(test):
 @pytest.mark.parametrize("test", ['basic', 'escape'])
 def test_image_web_link_conversion(test):
     assert_template("image_link/image_web_link", test, ImageWebLinkConversion())
+
+
+@pytest.mark.parametrize("test", ['basic'])
+def test_pdf_conversion(test):
+    assert_template("pdf", test, PdfConversion())
 
 
 @pytest.mark.parametrize("test", ['basic'])

@@ -22,19 +22,17 @@ class PdfConversion(AbstractConversion):
 
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
-        return self._convert_tags(*syntax_groups)
+        base_path = page.canonical_url[:-len(page.url)]
+        return self._convert_tags(base_path, *syntax_groups)
 
-    def _convert_tags(self, pdf_path: str, tags: str) -> str:
+    def _convert_tags(self, base_path: str, pdf_path: str, tags: str) -> str:
         if tags is None:
             height = 800
         else:
             height = int(tags[8:])
 
         return cleandoc(f"""
-        <object data="/{pdf_path}" type="application/pdf" width="100%" height="{height}px" >
-            <embed src="/{pdf_path}" type="application/pdf" width="100%" height="{height}px"/>
+        <object data="{base_path}{pdf_path}" type="application/pdf" width="100%" height="{height}px" >
+            <embed src="{base_path}{pdf_path}" type="application/pdf" width="100%" height="{height}px"/>
         </object>
         """)
-
-
-

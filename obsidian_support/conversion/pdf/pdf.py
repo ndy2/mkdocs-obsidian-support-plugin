@@ -23,15 +23,27 @@ class PdfConversion(AbstractConversion):
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
         base_path = page.canonical_url[:-len(page.url)]
-        return self._convert_tags(base_path, *syntax_groups)
+        return self._convert_tags(page, base_path, *syntax_groups)
 
-    def _convert_tags(self, base_path: str, pdf_path: str, tags: str) -> str:
+    def _convert_tags(self, page,  base_path: str, pdf_path: str, tags: str) -> str:
         if tags is None:
             height = 800
         else:
             height = int(tags[8:])
 
         return cleandoc(f"""
+        page.url = {page.url} <br>
+        page.abs_url = {page.abs_url} <br>
+        page.canonical_url = {page.canonical_url} <br>
+        page.edit_url = {page.edit_url} <br>
+        <br>
+        page.file.url = {page.file.url} <br>
+        page.file.src_path = {page.file.src_path} <br>
+        page.file.abs_src_path = {page.file.abs_src_path} <br>
+        page.file.dest_path = {page.file.dest_path} <br>
+        page.file.abs_dest_path = {page.file.abs_dest_path} <br>
+        <br>
+        
         <object data="{base_path}{pdf_path}" type="application/pdf" width="100%" height="{height}px" >
             <embed src="{base_path}{pdf_path}" type="application/pdf" width="100%" height="{height}px"/>
         </object>

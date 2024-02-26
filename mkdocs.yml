@@ -1,6 +1,6 @@
 # Project information
 site_name: mkdocs-obsidian-support-plugin
-site_url: https://ndy2.github.io
+site_url: https://ndy2.github.io/mkdocs-obsidian-support-plugin
 edit_uri: blob/main/docs/
 site_description: >-
   A MkDocs plugin that supports obsidian to mkdocs convert

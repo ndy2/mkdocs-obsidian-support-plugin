@@ -14,6 +14,8 @@ def markdown_convert(markdown: str, page: Page, conversion: AbstractConversion) 
     converted_markdown = ""
     index = 0
     excluded_indices = _get_excluded_indices(markdown)
+    excluded_indices = []
+    print(excluded_indices)
 
     for obsidian_syntax in conversion.obsidian_regex_pattern.finditer(markdown):
         ## found range of markdown where the obsidian_regex matches

@@ -15,10 +15,8 @@ jobs:
       - name: Set up Python 3 ⚙️ 🐍
         uses: actions/setup-python@v2
 
-      # retrieve your distributions here
-      - run: pip install -r requirements.txt
-
       # run pytest
+      - run: pip install -r requirements.txt
       - run: cd test; python -m pytest
 
       # create & archive artifact
@@ -51,11 +49,24 @@ jobs:
       # publish it to pypi
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
+
+  gh-pages:
+    name: Deploy Github Pages
+    needs: release
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Set up Python 3 ⚙️ 🐍
+        uses: actions/setup-python@v2
+      - run: pip install -r requirements.txt
 
       # deploy github pages
       - run: pip install mkdocs-material
       - run: pip install mkdocs-glightbox
-      - run: pip3 install mkdocs-exclude
-      - run: pip install mkdocs-kroki-plugin
+      - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-obsidian-support-plugin
       - run: mkdocs gh-deploy --force

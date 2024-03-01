@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mkdocs:
+    build:
+      context: .
+      network: host
+    restart: unless-stopped
+    ports: 
+      - 127.0.0.1:8000:8000         # adapt port if necessary
+    volumes:
+      - ./mkdocs.yml:/notes/mkdocs.yml:ro
+      - ./hooks/:/notes/hooks/:ro
+      - ./docs/:/notes/docs/:ro     # path to obsidian vault
+

@@ -57,3 +57,8 @@ extra_css:
 extra_javascript:
   - https://code.jquery.com/jquery-3.7.1.min.js
   - assets/javascript/obsidian_tags.js
+  - https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js
+  - assets/javascript/graph.js
+
+hooks:
+  - hooks/graph.py

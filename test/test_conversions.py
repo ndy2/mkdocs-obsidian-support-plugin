@@ -13,8 +13,9 @@ from obsidian_support.conversion.comment.comment import CommentConversion
 from obsidian_support.conversion.image_link.image_internal_link import ImageInternalLinkConversion
 from obsidian_support.conversion.image_link.image_web_link import ImageWebLinkConversion
 from obsidian_support.conversion.pdf.pdf import PdfConversion
+from obsidian_support.conversion.tabs.tabs_backquotes import TabsBackquotesConversion
+from obsidian_support.conversion.tabs.tabs_tilde_block import TabsTildeBlockConversion
 from obsidian_support.conversion.tags.tags import TagsConversion
-from obsidian_support.markdown_convert import markdown_convert
 
 """
 unit tests for `obsidian syntax` to `mkdocs-material syntax` conversion
@@ -29,6 +30,11 @@ def test_admonition_callout_conversion(test):
 @pytest.mark.parametrize("test", ['basic'])
 def test_admonition_backquotes_conversion(test):
     assert_template("admonition/admonition_backquotes", test, AdmonitionBackquotesConversion())
+
+
+@pytest.mark.parametrize("test", ['basic'])
+def test_comment_conversion(test):
+    assert_template("comment", test, CommentConversion())
 
 
 @pytest.mark.parametrize("test", ['basic', 'size', 'caption', 'size_caption'])
@@ -47,13 +53,18 @@ def test_pdf_conversion(test):
 
 
 @pytest.mark.parametrize("test", ['basic'])
-def test_tag_conversion(test):
-    assert_template("tags", test, TagsConversion())
+def test_tabs_backquotes_conversion(test):
+    assert_template("tabs/tabs_backquotes", test, TabsBackquotesConversion())
 
 
 @pytest.mark.parametrize("test", ['basic'])
-def test_comment_conversion(test):
-    assert_template("comment", test, CommentConversion())
+def test_tabs_tilde_block_conversion(test):
+    assert_template("tabs/tabs_tilde_block", test, TabsTildeBlockConversion())
+
+
+@pytest.mark.parametrize("test", ['basic'])
+def test_tag_conversion(test):
+    assert_template("tags", test, TagsConversion())
 
 
 def assert_template(conversion_name: str, test: str, conversion: AbstractConversion):
@@ -71,7 +82,7 @@ def assert_template(conversion_name: str, test: str, conversion: AbstractConvers
         page = Page(title="test_page", file=file, config=config)
 
         # when
-        actual = markdown_convert(given, page, conversion)
+        actual = conversion.markdown_convert(given, page)
 
         # then
         assert_that(expected).is_equal_to(actual)

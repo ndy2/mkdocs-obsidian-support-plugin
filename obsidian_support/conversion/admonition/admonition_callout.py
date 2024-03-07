@@ -31,18 +31,18 @@ class AdmonitionCalloutConversion(AbstractConversion):
     def obsidian_regex_pattern(self):
         # OBSIDIAN_CALL_OUT_REGEX
         return re.compile(r"""
-        (?:^|[\r\n])[ ]?>[ ]?      # callout must starts with `\n` or in the beginning of markdown
-        \[!(?P<type>[A-Za-z]+)]    # callout type
-        (?P<collapse>\+|-?)        # callout collapse (optional) - add `+` or `-` to make foldable callout 
-        (?P<title>[ ].*)?          # callout title (optional)
-        (?P<contents>(\n[ ]?>.*)*)? # callout contents
+        (?P<place>^|[\r\n])                 # callout must starts with `\n` or in the beginning of markdown
+        [ ]?>[ ]?\[!(?P<type>[A-Za-z]+)]    # callout type
+        (?P<collapse>\+|-?)                 # callout collapse (optional) - add `+` or `-` to make foldable callout 
+        (?P<title>[ ].*)?                   # callout title (optional)
+        (?P<contents>(\n[ ]?>.*)*)?         # callout contents
         """, flags=re.VERBOSE)
 
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
         return self._create_admonition(*syntax_groups)
 
-    def _create_admonition(self, ad_type: str, collapse: str, title: str, contents: str) -> str:
+    def _create_admonition(self, place, ad_type: str, collapse: str, title: str, contents: str) -> str:
         contents = contents.replace("\n> ", "\n    ")
         contents = contents.replace("\n > ", "\n    ")
         contents = contents.replace("\n>", "\n    ")
@@ -60,5 +60,5 @@ class AdmonitionCalloutConversion(AbstractConversion):
         else:
             collapse = "!!! "
 
-        admonition = "\n" + collapse + ad_type + title + "\n" + contents
+        admonition = place + collapse + ad_type + title + "\n" + contents
         return admonition

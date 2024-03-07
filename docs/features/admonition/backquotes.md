@@ -13,7 +13,6 @@ title: Admonition Backquotes
 ###  Admonition Backquotes
 
 === "obsidian markdown"
-
 ~~~
 ```ad-tip
 title: This is a tip
@@ -23,7 +22,6 @@ This is the content of the admonition tip.
 ~~~
 
 === "obsidian rendered"
-
 ![[images/backquotes_1.png]]
 
 ### mkdocs-material admonition

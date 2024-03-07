@@ -37,7 +37,7 @@ class AdmonitionBackquotesConversion(AbstractConversion):
     def obsidian_regex_pattern(self):
         # OBSIDIAN_ADMONITION_REGEX (CALLOUT)
         return re.compile(r"""
-        (?:^|[\r\n])                             # admonition must starts with `\n` or in the beginning of markdown
+        (?P<place>^|[\r\n])                      # admonition must starts with `\n` or in the beginning of markdown
         ```(ad-(?P<type>[A-Za-z]+))\n            # admonition type
         ((title:[ ](?P<title>[^\n]+))\n)?        # admonition title (optional)
         ((collapse:[ ](?P<collapse>[^\n]+))\n)?  # admonition collapse (optional) - add `closed` or `open` to make it collapsible
@@ -49,7 +49,7 @@ class AdmonitionBackquotesConversion(AbstractConversion):
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
         return self._create_admonition(*syntax_groups)
 
-    def _create_admonition(self, ad_type: str, title: str, collapse: str, contents: str) -> str:
+    def _create_admonition(self, place, ad_type: str, title: str, collapse: str, contents: str) -> str:
         contents = contents.strip()
         contents = "    " + contents.replace("\n", "\n    ")
 
@@ -65,5 +65,5 @@ class AdmonitionBackquotesConversion(AbstractConversion):
         else:
             collapse = "!!!"
 
-        admonition = "\n" + collapse + " " + ad_type + title + "\n\n" + contents
+        admonition = place + collapse + " " + ad_type + title + "\n\n" + contents
         return admonition

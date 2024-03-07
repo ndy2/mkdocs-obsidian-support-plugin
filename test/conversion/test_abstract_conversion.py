@@ -2,7 +2,7 @@ from typing import List
 
 from assertpy import assert_that
 
-from obsidian_support.markdown_convert import _get_excluded_indices
+from obsidian_support.conversion.abstract_conversion import AbstractConversion
 
 
 def test_get_code_indices():
@@ -39,7 +39,7 @@ some tip
 ~~~"""
 
     # when
-    code_indices: List[tuple] = _get_excluded_indices(markdown)
+    code_indices: List[tuple] = AbstractConversion._get_excluded_indices(markdown)
 
     # then
     assert_that(code_indices).is_length(5)

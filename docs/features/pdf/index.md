@@ -1,4 +1,7 @@
-
+---
+title: Pdf
+comments: true
+---
 > [!note]  feature - image-link
 > Convert `obsidian embed pdf` to `html embed pdf`
 > 

@@ -1,3 +1,7 @@
+---
+title: Tabs
+comments: true
+---
 > [!note]  feature - tags
 > Convert `obsidian html-tabs` to `mkdocs-material content tab`
 >

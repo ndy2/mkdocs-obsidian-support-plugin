@@ -1,5 +1,6 @@
 ---
 title: README
+comments: true
 ---
 
 Plugin for [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) to convert semantic in documentation

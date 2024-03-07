@@ -1,5 +1,6 @@
 ---
 title: Comment
+comments: true
 ---
 
 > [!note]  feature - comment

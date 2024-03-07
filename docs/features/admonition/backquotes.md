@@ -1,5 +1,6 @@
 ---
 title: Admonition Backquotes
+comments: true
 ---
 > [!note]  feature - admonition backquotes
 > convert `block-styled admonition` to `mkdocs-material admonition`

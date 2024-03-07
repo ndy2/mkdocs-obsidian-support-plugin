@@ -6,17 +6,17 @@ from overrides import override
 from obsidian_support.conversion.abstract_conversion import AbstractConversion, SyntaxGroup
 
 
-class TabsBackquotesConversion(AbstractConversion):
+class TabsTildeBlockConversion(AbstractConversion):
 
     @property
     @override
     def obsidian_regex_pattern(self):
-        # OBSIDIAN_HTML_BACKQUOTES_TAB_REGEX
+        # OBSIDIAN_HTML_TILDE_BLOCK_TAB_REGEX
         return re.compile(r"""
         (?P<place>^|[\r\n])                      # tab must starts with `\n` or in the beginning of markdown
-        ```tabs\n                                # tab code block
-        (?P<tabs>((?!```).*\n)*)                 # tabs
-        ```
+        ~~~tabs\n                                # tab code block
+        (?P<tabs>((?!~~~).*\n)*)                 # tabs
+        ~~~
         """, flags=re.VERBOSE)
 
     @override

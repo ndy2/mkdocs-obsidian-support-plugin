@@ -12,70 +12,63 @@ See [Demo](demo) for more examples
 
 ###  obsidian callout
 
-=== "obsidian markdown"
+```tabs
+---tab obsidian markdown
 
-```
+~~~
 > [!note] haha
 > I am obsidian callout!
 > 
 > I became mkdocs admonition!
-```
+~~~
 
-=== "obsidian rendered"
-
+---tab obsidian rendered
 ![[images/callout_1.png]]
-
+```
 
 ### mkdocs-material admonition
 
-=== "mkdocs-material markdown"
-
-```
+```tabs
+---tab mkdocs-material markdown
+~~~
 !!!note "haha"
 
     I am obsidian callout!
     I became mkdocs admonition!
-```
-
-=== "mkdocs-material rendered"
-
+~~~
+---tab mkdocs-material rendered
 > [!note] haha
 > I am obsidian callout!
 > 
 > I became mkdocs admonition!
-
-
+```
 
 ## Foldable/Collapsible
 
 ###  obsidian callout
 
-=== "obsidian markdown"
-
-```
+```tabs
+---tab obsidian markdown
+~~~
 > [!faq]- Are callouts foldable? 
 > Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
-```
-
-=== "obsidian rendered"
-
+~~~
+---tab obsidian rendered
 ![[images/callout_2.png]]
+```
 
 ### mkdocs-material admonition
 
-=== "mkdocs-material markdown"
-
-```
+```tabs
+---tab mkdocs-material markdown
+~~~
 ??? faq "Are callouts foldable?"
     Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
-```
-
-=== "mkdocs-material rendered"
-
+~~~
+---tab mkdocs-material rendered
 > [!faq]- Are callouts foldable? 
 > Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
-
-
+```
 ## 💡 Notes
 
 common types that `obsidian callout` and `mkdocs-material admonition` support are

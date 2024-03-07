@@ -37,32 +37,30 @@ mdlink   :  [images/hello.png](images/hello.png)
 
 **Converted links in `md_in_html` form**
 
-=== "custom size"
+~~~tabs
+---tab custom size
+```html
+<figure markdown>
+  ![hello.png](hello.png){ width="200" height="300" }
+  
+</figure markdown>
+```
+---tab caption
+```html
+<figure markdown>
+  ![hello.png](hello.png)
+  <figcaption>my-caption</figcaption>
+</figure markdown>
+```
+---tab custom size and caption
+```html
+<figure markdown>
+  ![hello.png](hello.png){ width="200" height="300" }
+  <figcaption>caption</figcaption>
+</figure markdown>
+```
+~~~
 
-	```html
-	<figure markdown>
-	  ![hello.png](hello.png){ width="200" height="300" }
-	  
-	</figure markdown>
-	```
-
-=== "caption"
-
-	```html
-	<figure markdown>
-	  ![hello.png](hello.png)
-	  <figcaption>my-caption</figcaption>
-	</figure markdown>
-	```
-
-=== "custom size and caption"
-
-	```html
-	<figure markdown>
-	  ![hello.png](hello.png){ width="200" height="300" }
-	  <figcaption>caption</figcaption>
-	</figure markdown>
-	```
 
 ## Demo
 

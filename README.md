@@ -27,6 +27,7 @@ plugins:
 - `obsidian wikilink image` -> `mkdocs-material mdlink image` & `image with md_in_html`
 - `obsidian embed pdf` -> `html embed pdf`
 - `obsidian tags` -> `mkdocs-material search`
+- `obsidian html-tabs` -> `mkdocs-material content tabs`
 
 > [!note]
 >

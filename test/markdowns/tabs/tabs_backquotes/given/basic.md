@@ -29,3 +29,12 @@ This tab contains callout
 > [!note] tab with callout!
 > callout content
 ```
+
+# Some markdowns
+
+```tabs
+---tab another tabs tab1
+another tabs tab1 content
+---tab another tabs tab2
+another tabs tab2 content
+```

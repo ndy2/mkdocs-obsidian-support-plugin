@@ -9,15 +9,14 @@ title: Tags
 
 ## Usage
 
-=== "obsidian markdown"
-
-    ```
-    This is just an #obsidian tag. Click to go to the search bar
-    ```
-
-=== "mkdocs-material rendered"
-
-    This is just an #obsidian tag. Click to go to the search bar
+```tabs
+---tab obsidian markdown
+~~~
+This is just an #obsidian tag. Click to go to the search bar
+~~~
+---tab mkdocs-material rendered
+This is just an #obsidian tag. Click to go to the search bar
+```
 
 ## How to activate
 

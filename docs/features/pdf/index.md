@@ -9,31 +9,32 @@
 
 ### obsidian embed pdf
 
-=== "obsidian markdown"
-
-```
+```tabs
+---tab obsidian markdown
+~~~
 ![[features/pdf/a4-sample.pdf]]
-```
+~~~
 
 You can also specify the height in pixels for the embedded PDF viewer, by adding `#height=[number]` to the link. like this : `![[features/pdf/a4-sample.pdf#height=400]]`
 
-=== "obsidian rendered"
-
+---tab obsidian rendered
 ![[images/pdf_1.png]]
+```
+
 
 ### html-embed pdf
 
-=== "html"
-
-```
+```tabs
+---tab html
+~~~
 <object data="/features/pdf/a4-sample.pdf" type="application/pdf" width="100%" height="800px" >
     <embed src="/features/pdf/a4-sample.pdf" type="application/pdf" width="100%" height="800px"/>
 </object>
+~~~
+---tab html rendered
+![[features/pdf/a4-sample.pdf]]
 ```
 
-=== "html rendered"
-
-![[features/pdf/a4-sample.pdf]]
 
 ## HTML Template
 

@@ -1,5 +1,5 @@
 === "First *tab*"
-    
+
     This is a *sample* **tab** with some markdown :
     ## Heading 2
     - [ ] Task 1
@@ -11,9 +11,9 @@
     * Nulla tempor lobortis orci
     
 === "Second tab"
-    
+
     This tab has a code block:
-    ~~~cpp
+    ```cpp
     include <iostream>
     using namespace std;
     
@@ -24,10 +24,18 @@
      cout << "ASCII Value of " << c << " is " << int(c);
      return 0;
     }
-    ~~~
-    
+    ```
 === "Last tab"
 
     This tab contains callout
     > [!note] tab with callout!
     > callout content
+
+# Some markdowns
+
+=== "another tabs tab1"
+
+    another tabs tab1 content
+=== "another tabs tab2"
+
+    another tabs tab2 content

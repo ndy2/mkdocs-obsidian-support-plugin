@@ -6,8 +6,9 @@ from obsidian_support.conversion.comment.comment import CommentConversion
 from obsidian_support.conversion.image_link.image_internal_link import ImageInternalLinkConversion
 from obsidian_support.conversion.image_link.image_web_link import ImageWebLinkConversion
 from obsidian_support.conversion.pdf.pdf import PdfConversion
+from obsidian_support.conversion.tabs.tabs_backquotes import TabsBackquotesConversion
+from obsidian_support.conversion.tabs.tabs_tilde_block import TabsTildeBlockConversion
 from obsidian_support.conversion.tags.tags import TagsConversion
-from obsidian_support.markdown_convert import markdown_convert
 
 """
 A mkdocs plugin that support conversion from
@@ -25,15 +26,19 @@ class ObsidianSupportPlugin(BasePlugin):
         self.pdf_conversion = PdfConversion()
         self.image_web_link_conversions = ImageWebLinkConversion()
         self.image_internal_link_conversion = ImageInternalLinkConversion()
+        self.tabs_backquotes_conversion = TabsBackquotesConversion()
+        self.tabs_tilde_block_conversion = TabsTildeBlockConversion()
         self.tags_conversion = TagsConversion()
 
     def on_page_markdown(self, markdown, page, config, files):
         # apply conversions
-        markdown = markdown_convert(markdown, page, self.admonition_callout_conversions)
-        markdown = markdown_convert(markdown, page, self.admonition_backquotes_conversion)
-        markdown = markdown_convert(markdown, page, self.comment_conversion)
-        markdown = markdown_convert(markdown, page, self.pdf_conversion)
-        markdown = markdown_convert(markdown, page, self.image_web_link_conversions)
-        markdown = markdown_convert(markdown, page, self.image_internal_link_conversion)
-        markdown = markdown_convert(markdown, page, self.tags_conversion)
+        markdown = self.admonition_callout_conversions.markdown_convert(markdown, page)
+        markdown = self.tabs_backquotes_conversion.markdown_convert(markdown, page)
+        markdown = self.tabs_tilde_block_conversion.markdown_convert(markdown, page)
+        markdown = self.admonition_backquotes_conversion.markdown_convert(markdown, page)
+        markdown = self.comment_conversion.markdown_convert(markdown, page)
+        markdown = self.pdf_conversion.markdown_convert(markdown, page)
+        markdown = self.image_web_link_conversions.markdown_convert(markdown, page)
+        markdown = self.image_internal_link_conversion.markdown_convert(markdown, page)
+        markdown = self.tags_conversion.markdown_convert(markdown, page)
         return markdown

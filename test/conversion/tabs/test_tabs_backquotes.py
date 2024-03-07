@@ -1,7 +1,8 @@
 from inspect import cleandoc
 
-from conversion.tabs.tabs_backquotes import TabsBackquotesConversion
-from obsidian_support.markdown_convert import markdown_convert
+from assertpy import assert_that
+
+from obsidian_support.conversion.tabs.tabs_backquotes import TabsBackquotesConversion
 
 
 def test_tag_conversion():
@@ -10,12 +11,21 @@ def test_tag_conversion():
     markdown = cleandoc("""
     ```tabs
     ---tab first tab
+    content-of-first-tab
     ---tab second tab
+    content-of-second-tab
     ```
     """)
 
     # when
-    converted = markdown_convert(markdown, None, conversion)
+    converted = conversion.markdown_convert(markdown, None)
 
     # then
-    print(converted)
+    assert_that(converted).is_equal_to(cleandoc("""
+    === "first tab"
+    
+        content-of-first-tab
+    === "second tab"
+    
+        content-of-second-tab
+    """))

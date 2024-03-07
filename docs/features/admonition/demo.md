@@ -1,3 +1,7 @@
+---
+title: Demo
+comments: true
+---
 ## Examples
 
 `1. basic`

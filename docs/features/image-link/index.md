@@ -1,5 +1,6 @@
 ---
 title: Image-Link
+comments: true
 ---
 > [!note]  feature - image-link
 > Convert `obsidian wikilink for images` to `mkdocs-material md-link for images`

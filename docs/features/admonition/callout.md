@@ -1,5 +1,6 @@
 ---
 title: Admonition Callout
+comments: true
 ---
 > [!note]  feature - admonition callout
 > Convert `obsidian callout` to `mkdocs-material admonition`

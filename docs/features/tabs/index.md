@@ -54,6 +54,8 @@ This tab contains callout
 
 ### mkdocs-material content tabs
 
+**mkdocs markdown**
+
 ~~~~
 === "First *tab*"
     
@@ -91,6 +93,8 @@ This tab contains callout
         callout content
 ~~~~
 
+
+**rendered**
 
 ```tabs
 ---tab First *tab*

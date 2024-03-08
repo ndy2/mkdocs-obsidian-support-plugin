@@ -11,41 +11,39 @@ title: Comment
 ## Usage
 
 ### obsidian comment
-
-=== "obsidian markdown"
-
-```
+```tabs
+---tab obsidian markdown
+~~~
 This is an %%inline%% comment.
 
 %% 
 This is a block comment. 
 Block comments can span multiple lines. 
 %%
+~~~
+
+---tab obsidian reading view
+![[images/comment_1.png]]
 ```
 
-=== "obsidian reading view"
-
-![[images/comment_1.png]]
 
 ### mkdocs-material comment
 
-=== "mkdocs-material markdown"
-
-```
+```tabs
+---tab mkdocs-material markdown
+~~~
 This is an <!--inline--> comment.
 
 <!--
 This is a block comment. 
 Block comments can span multiple lines. 
 -->
-```
+~~~
 
-=== "mkdocs-material rendered"
-
+---tab mkdocs-material rendered
 This is an %%inline%% comment.
-
 %% 
 This is a block comment. 
 Block comments can span multiple lines. 
 %%
-
+```

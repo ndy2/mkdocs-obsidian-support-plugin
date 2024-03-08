@@ -32,13 +32,13 @@ class ObsidianSupportPlugin(BasePlugin):
 
     def on_page_markdown(self, markdown, page, config, files):
         # apply conversions
-        markdown = self.admonition_callout_conversions.markdown_convert(markdown, page)
-        markdown = self.tabs_backquotes_conversion.markdown_convert(markdown, page)
-        markdown = self.tabs_tilde_block_conversion.markdown_convert(markdown, page)
         markdown = self.admonition_backquotes_conversion.markdown_convert(markdown, page)
         markdown = self.comment_conversion.markdown_convert(markdown, page)
         markdown = self.pdf_conversion.markdown_convert(markdown, page)
         markdown = self.image_web_link_conversions.markdown_convert(markdown, page)
         markdown = self.image_internal_link_conversion.markdown_convert(markdown, page)
         markdown = self.tags_conversion.markdown_convert(markdown, page)
+        markdown = self.admonition_callout_conversions.markdown_convert(markdown, page)
+        markdown = self.tabs_tilde_block_conversion.markdown_convert(markdown, page)
+        markdown = self.tabs_backquotes_conversion.markdown_convert(markdown, page)
         return markdown

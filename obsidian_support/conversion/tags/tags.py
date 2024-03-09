@@ -17,7 +17,7 @@ class TagsConversion(AbstractConversion):
     @override
     def obsidian_regex_pattern(self):
         # OBSIDIAN_TAGS_REGEX
-        return re.compile(r"(?<!\\)#(?P<tags>[\w\-_\/]+)(?![^\[\(`]*[\]\)`])")
+        return re.compile(r"(?<!\\)#(?P<tags>[\w\-_\/]+)(?![^\[\(]*[\]\)])")
 
     @override
     def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:

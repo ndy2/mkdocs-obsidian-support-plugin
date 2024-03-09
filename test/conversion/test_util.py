@@ -202,3 +202,23 @@ def test_get_exclude_indices_5():
 
     # then
     print(exclude_indices)
+
+
+def test_get_exclude_indices_6():
+    # given
+    markdown = cleandoc("""
+    ```tabs
+    ---tab obsidian markdown
+    ~~~
+    This is just an #obsidian tag. Click to go to the search bar
+    ~~~
+    ---tab mkdocs-material rendered
+    This is just an #obsidian tag. Click to go to the search bar
+    ```
+    """)
+
+    # when
+    exclude_indices = get_exclude_indices(markdown)
+
+    # then
+    print(exclude_indices)

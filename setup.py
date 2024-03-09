@@ -2,7 +2,7 @@ import os
 
 from setuptools import setup, find_packages
 
-VERSION_NUMBER = '1.3.1'
+VERSION_NUMBER = '1.3.2'
 
 
 def read_file(fname):

@@ -59,7 +59,8 @@ def get_exclude_indices(markdown: str) -> List[Tuple[int, int]]:
                 nested_code_block_syntax = code_block_syntax
             elif nested_code_block_syntax is not None and \
                     code_block_syntax.code_block_type == nested_code_block_syntax.code_block_type:
-                if not nested_code_block_syntax.language.startswith("ad-") and not nested_code_block_syntax.language == "tabs":
+                if not nested_code_block_syntax.language.startswith("ad-") and \
+                        not nested_code_block_syntax.language == "tabs":
                     exclude_indices.append((nested_code_block_syntax.start, code_block_syntax.end))
                 nested_code_block_syntax = None
 

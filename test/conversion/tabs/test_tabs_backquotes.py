@@ -5,7 +5,7 @@ from assertpy import assert_that
 from obsidian_support.conversion.tabs.tabs_backquotes import TabsBackquotesConversion
 
 
-def test_tag_conversion():
+def test_tabs_conversion():
     # given
     conversion = TabsBackquotesConversion()
     markdown = cleandoc("""

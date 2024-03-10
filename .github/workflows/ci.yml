@@ -69,4 +69,5 @@ jobs:
       - run: pip install mkdocs-glightbox
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-obsidian-support-plugin
+      - run: pip install mkdocs-obsidian-bridge
       - run: mkdocs gh-deploy --force

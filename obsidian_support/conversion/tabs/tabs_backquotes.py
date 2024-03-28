@@ -20,7 +20,7 @@ class TabsBackquotesConversion(AbstractConversion):
         """, flags=re.VERBOSE)
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         return self._create_content_tabs(*syntax_groups)
 
     def _create_content_tabs(self, place, tabs) -> str:

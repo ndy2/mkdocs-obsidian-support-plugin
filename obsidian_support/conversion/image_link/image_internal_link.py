@@ -25,7 +25,7 @@ class ImageInternalLinkConversion(AbstractConversion):
         return re.compile(r"!\[\[(?P<image_path>[^|^\]]+)(?P<tags>|.+)?]]")
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         return self._convert_image_internal_link(*syntax_groups)
 
     def _convert_image_internal_link(self, image_path: str, tags: str) -> str:

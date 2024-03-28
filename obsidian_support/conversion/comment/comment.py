@@ -24,7 +24,7 @@ class CommentConversion(AbstractConversion):
         return re.compile(r"%%(?P<comment>[\S\s]*?)%%")
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         return self._convert_comment(*syntax_groups)
 
     def _convert_comment(self, comment):

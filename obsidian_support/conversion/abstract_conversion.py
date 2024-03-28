@@ -33,14 +33,14 @@ class AbstractConversion(metaclass=ABCMeta):
         return list(self.obsidian_regex_pattern.groupindex.keys())
 
     @abstractmethod
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         pass
 
     """
     A template method that applies conversion for every regex matches
     """
 
-    def markdown_convert(self, markdown: str, page: Page) -> str:
+    def markdown_convert(self, markdown: str, page: Page, depth: int = 0) -> str:
         converted_markdown = ""
         index = 0
         excluded_indices = get_exclude_indices(markdown)
@@ -56,7 +56,7 @@ class AbstractConversion(metaclass=ABCMeta):
 
             syntax_groups = list(map(lambda group: obsidian_syntax.group(group), self.obsidian_regex_groups))
 
-            mkdocs_syntax = self.convert(syntax_groups, page)
+            mkdocs_syntax = self.convert(syntax_groups, page, depth)
             converted_markdown += markdown[index:start]
             converted_markdown += mkdocs_syntax
             index = end + 1

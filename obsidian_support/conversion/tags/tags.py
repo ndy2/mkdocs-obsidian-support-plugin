@@ -20,7 +20,7 @@ class TagsConversion(AbstractConversion):
         return re.compile(r"(?<!\\)#(?P<tags>[\w\-_\/]+)(?![^\[\(]*[\]\)])")
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         return self._convert_tags(*syntax_groups)
 
     def _convert_tags(self, tags: str) -> str:

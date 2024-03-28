@@ -46,7 +46,7 @@ class AdmonitionBackquotesConversion(AbstractConversion):
         """, flags=re.VERBOSE)
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         return self._create_admonition(*syntax_groups)
 
     def _create_admonition(self, place, ad_type: str, title: str, collapse: str, contents: str) -> str:

@@ -70,6 +70,57 @@ See [Demo](demo) for more examples
 > [!faq]- Are callouts foldable? 
 > Yes! In a foldable callout, the contents are hidden when the callout is collapsed.
 ```
+
+## Nested
+
+###  obsidian callout
+
+```tabs
+---tab obsidian markdown
+~~~
+> [!note] some note
+> some content before nested notes
+> 
+> > [!note] nested note with no content
+> 
+> > [!note] another nested note with some another content
+> > some another content
+>
+> some content after nested notes
+~~~
+---tab obsidian rendered
+![[images/callout_3.png]]
+```
+
+### mkdocs-material admonition
+
+```tabs
+---tab mkdocs-material markdown
+~~~
+!!! note "some note"
+
+    some content before nested notes
+        
+    !!! note "nested note with no content"
+
+    !!! note "another nested note with some another content"
+        
+        some another content
+        
+    some content after nested notes  
+~~~
+---tab mkdocs-material rendered
+> [!note] some note
+> some content before nested notes
+> 
+> > [!note] nested note with no content
+> 
+> > [!note] another nested note with some another content
+> > some another content
+>
+> some content after nested notes
+```
+
 ## 💡 Notes
 
 common types that `obsidian callout` and `mkdocs-material admonition` support are
@@ -96,16 +147,12 @@ common types that `obsidian callout`, `mkdocs-material admonition` and even `Git
 ## Implementation details and Warning
 
 > [!warning] implementation limitation
-> 1. Nested callout or admonition is not suppoerted
-> 
-> 2. Unlike actual obsidian callout, It requires more precise syntax. <br>
->    there sholud be only zero or one space before and after first  `>` character <br>
->    and no space before the rest of `>` characters and one space after it.
+> Unlike actual obsidian callout, It requires more precise syntax. <br>
+> there sholud be only zero or one space before and after first  `>` character <br>
+> and no space before the rest of `>` characters and one space after it.
 > 
 >   recommended format is as below
 > ```text
 > > [!info]
 > > copy me 
 > ```
-
-

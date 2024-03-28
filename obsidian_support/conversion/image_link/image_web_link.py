@@ -27,7 +27,7 @@ class ImageWebLinkConversion(AbstractConversion):
         return re.compile(r"!\[(?P<tags>(?!\\).*)]\((?P<image_path>https?://.*)\)")
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         return self._convert_image_link(*syntax_groups)
 
     def _convert_image_link(self, tags: str, image_path: str) -> str:

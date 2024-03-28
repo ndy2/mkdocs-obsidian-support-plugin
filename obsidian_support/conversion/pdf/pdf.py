@@ -21,7 +21,7 @@ class PdfConversion(AbstractConversion):
         return re.compile(r"!\[\[(?P<pdf_path>[^|^\]]+\.pdf)(?P<tags>#height=\d+)?]]")
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
         base_path = page.canonical_url[:-len(page.url)]
         return self._convert_tags(base_path, *syntax_groups)
 

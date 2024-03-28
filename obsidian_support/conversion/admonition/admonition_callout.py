@@ -39,10 +39,11 @@ class AdmonitionCalloutConversion(AbstractConversion):
         """, flags=re.VERBOSE)
 
     @override
-    def convert(self, syntax_groups: SyntaxGroup, page: Page) -> str:
-        return self._create_admonition(*syntax_groups)
+    def convert(self, syntax_groups: SyntaxGroup, page: Page, depth: int) -> str:
+        return self._create_admonition(page, depth, *syntax_groups)
 
-    def _create_admonition(self, place, ad_type: str, collapse: str, title: str, contents: str) -> str:
+    def _create_admonition(self, page: Page, depth: int, place: str, ad_type: str, collapse: str, title: str,
+                           contents: str) -> str:
         contents = contents.replace("\n> ", "\n    ")
         contents = contents.replace("\n > ", "\n    ")
         contents = contents.replace("\n>", "\n    ")
@@ -60,5 +61,18 @@ class AdmonitionCalloutConversion(AbstractConversion):
         else:
             collapse = "!!! "
 
-        admonition = place + collapse + ad_type + title + "\n" + contents
+        de_indented_contents = self._de_indent(contents)
+        contents = self.markdown_convert(de_indented_contents, page, depth)
+        re_indented_contents = self._indent(depth + 1, contents)
+
+        admonition = place + collapse + ad_type + title + "\n" + re_indented_contents
         return admonition
+
+    def _de_indent(self, contents: str) -> str:
+        contents = contents.replace("\n    ", "\n")
+        return contents
+
+    def _indent(self, depth: int, contents: str) -> str:
+        indent = " " * 4 * depth
+        contents = contents.replace("\n", "\n" + indent)
+        return contents

@@ -81,7 +81,7 @@ def get_exclude_indices(markdown: str) -> List[Tuple[int, int]]:
 
 
 def is_overlapped(start: int, end: int, exclude_indices_pairs: List[tuple]) -> bool:
-    for exclude_indices_pair in exclude_indices_pairs:
-        if exclude_indices_pair[0] <= start and end <= exclude_indices_pair[1]:
+    for exclude_start, exclude_end in exclude_indices_pairs:
+        if exclude_start < end and start < exclude_end:
             return True
     return False

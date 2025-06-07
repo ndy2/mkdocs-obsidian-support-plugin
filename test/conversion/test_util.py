@@ -3,7 +3,7 @@ from typing import List
 
 from assertpy import assert_that
 
-from obsidian_support.conversion.util import get_exclude_indices
+from obsidian_support.conversion.util import get_exclude_indices, is_overlapped
 
 
 def test_get_exclude_indices_1():
@@ -236,3 +236,18 @@ def test_get_exclude_indices_7():
     # then
     assert_that(exclude_indices[0][0]).is_equal_to(markdown.index("<span "))
     assert_that(exclude_indices[0][1]).is_equal_to(markdown.index("</span>") + len("</span>"))
+
+
+def test_is_overlapped_partial_overlap_left():
+    pairs = [(10, 20)]
+    assert_that(is_overlapped(5, 15, pairs)).is_true()
+
+
+def test_is_overlapped_partial_overlap_right():
+    pairs = [(10, 20)]
+    assert_that(is_overlapped(15, 25, pairs)).is_true()
+
+
+def test_is_overlapped_boundary_touching():
+    pairs = [(10, 20)]
+    assert_that(is_overlapped(20, 25, pairs)).is_false()

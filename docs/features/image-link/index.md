@@ -6,7 +6,7 @@ comments: true
 > Convert `obsidian wikilink for images` to `mkdocs-material md-link for images`
 
 obsidian support [`wikilink`](https://help.obsidian.md/Linking+notes+and+files/Internal+links)
-with [embbe an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note)
+with [embed an image in a note](https://help.obsidian.md/Linking+notes+and+files/Embedding+files#Embed+an+image+in+a+note)
 which is also known as `internal link`. However markdown and mkdocs-material does not support `wikilink`. It uses
 traditional [`markdown links`](https://squidfunk.github.io/mkdocs-material/reference/images/).
 

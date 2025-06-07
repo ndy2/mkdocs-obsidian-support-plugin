@@ -44,7 +44,11 @@ def test_get_exclude_indices_2():
     exclude_indices = get_exclude_indices(markdown)
 
     # then
-    print(exclude_indices)
+    assert_that(exclude_indices).is_length(4)
+    assert_that(exclude_indices[0]).is_equal_to((33, 72))
+    assert_that(exclude_indices[1]).is_equal_to((74, 113))
+    assert_that(exclude_indices[2]).is_equal_to((196, 214))
+    assert_that(exclude_indices[3]).is_equal_to((240, 284))
 
 
 def test_get_exclude_indices_3():
@@ -201,7 +205,16 @@ def test_get_exclude_indices_5():
     exclude_indices = get_exclude_indices(markdown)
 
     # then
-    print(exclude_indices)
+    assert_that(exclude_indices).is_length(9)
+    assert_that(exclude_indices[0]).is_equal_to((34, 56))
+    assert_that(exclude_indices[1]).is_equal_to((78, 100))
+    assert_that(exclude_indices[2]).is_equal_to((102, 128))
+    assert_that(exclude_indices[3]).is_equal_to((213, 271))
+    assert_that(exclude_indices[4]).is_equal_to((273, 331))
+    assert_that(exclude_indices[5]).is_equal_to((14, 32))
+    assert_that(exclude_indices[6]).is_equal_to((58, 76))
+    assert_that(exclude_indices[7]).is_equal_to((156, 180))
+    assert_that(exclude_indices[8]).is_equal_to((0, 12))
 
 
 def test_get_exclude_indices_6():
@@ -221,7 +234,8 @@ def test_get_exclude_indices_6():
     exclude_indices = get_exclude_indices(markdown)
 
     # then
-    print(exclude_indices)
+    assert_that(exclude_indices).is_length(1)
+    assert_that(exclude_indices[0]).is_equal_to((33, 101))
 
 
 def test_get_exclude_indices_7():

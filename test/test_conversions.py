@@ -67,10 +67,14 @@ def test_tag_conversion(test):
     assert_template("tags", test, TagsConversion())
 
 
+from pathlib import Path
+
+
 def assert_template(conversion_name: str, test: str, conversion: AbstractConversion):
+    base_path = Path(__file__).parent / "markdowns"
     with ExitStack() as stack:
-        src = stack.enter_context(open(f"markdowns/{conversion_name}/given/{test}.md", 'r'))
-        dest = stack.enter_context(open(f"markdowns/{conversion_name}/expected/{test}.md", 'r'))
+        src = stack.enter_context(open(base_path / conversion_name / "given" / f"{test}.md", "r"))
+        dest = stack.enter_context(open(base_path / conversion_name / "expected" / f"{test}.md", "r"))
         given = src.read()
         expected = dest.read()
 

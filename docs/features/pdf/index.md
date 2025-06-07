@@ -2,7 +2,7 @@
 title: Pdf
 comments: true
 ---
-> [!note]  feature - image-link
+> [!note]  feature - pdf
 > Convert `obsidian embed pdf` to `html embed pdf`
 > 
 > - [obsidian embed pdf](https://help.obsidian.md/Linking+notes+and+files/Embed+files#Embed%20a%20PDF%20in%20a%20note)
